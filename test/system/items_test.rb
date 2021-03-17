@@ -17,6 +17,7 @@ class ItemsTest < ApplicationSystemTestCase
     fill_in "Amount", with: @item.amount
     fill_in "Name", with: @item.name
     fill_in "Restock", with: @item.restock
+    fill_in "Stock", with: @item.stock_id
     click_on "Create Item"
 
     assert_text "Item was successfully created"
@@ -30,6 +31,7 @@ class ItemsTest < ApplicationSystemTestCase
     fill_in "Amount", with: @item.amount
     fill_in "Name", with: @item.name
     fill_in "Restock", with: @item.restock
+    fill_in "Stock", with: @item.stock_id
     click_on "Update Item"
 
     assert_text "Item was successfully updated"

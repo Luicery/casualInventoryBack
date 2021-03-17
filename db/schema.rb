@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_16_073810) do
+ActiveRecord::Schema.define(version: 2021_03_17_142602) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,14 +21,17 @@ ActiveRecord::Schema.define(version: 2021_03_16_073810) do
     t.string "address"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
   end
 
   create_table "items", force: :cascade do |t|
     t.integer "amount"
     t.string "name"
     t.integer "restock"
+    t.bigint "stock_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["stock_id"], name: "index_items_on_stock_id"
   end
 
   create_table "locations", force: :cascade do |t|
@@ -48,6 +51,7 @@ ActiveRecord::Schema.define(version: 2021_03_16_073810) do
     t.index ["location_id"], name: "index_stocks_on_location_id"
   end
 
+  add_foreign_key "items", "stocks"
   add_foreign_key "locations", "companies"
   add_foreign_key "stocks", "locations"
 end

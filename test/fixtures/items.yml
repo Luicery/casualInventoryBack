@@ -4,8 +4,10 @@ one:
   amount: 1
   name: MyString
   restock: 1
+  stock: one
 
 two:
   amount: 1
   name: MyString
   restock: 1
+  stock: two

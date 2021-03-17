@@ -17,7 +17,7 @@ class ItemsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create item" do
     assert_difference('Item.count') do
-      post items_url, params: { item: { amount: @item.amount, name: @item.name, restock: @item.restock } }
+      post items_url, params: { item: { amount: @item.amount, name: @item.name, restock: @item.restock, stock_id: @item.stock_id } }
     end
 
     assert_redirected_to item_url(Item.last)
@@ -34,7 +34,7 @@ class ItemsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update item" do
-    patch item_url(@item), params: { item: { amount: @item.amount, name: @item.name, restock: @item.restock } }
+    patch item_url(@item), params: { item: { amount: @item.amount, name: @item.name, restock: @item.restock, stock_id: @item.stock_id } }
     assert_redirected_to item_url(@item)
   end
 
