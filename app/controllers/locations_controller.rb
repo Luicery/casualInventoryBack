@@ -1,5 +1,6 @@
 class LocationsController < ApplicationController
   before_action :set_location, only: %i[ show edit update destroy ]
+  before_action :authenticate_user, except: [:show]
 
   # GET /locations or /locations.json
   def index
@@ -22,7 +23,8 @@ class LocationsController < ApplicationController
   # POST /locations or /locations.json
   def create
     @location = Location.new(location_params)
-
+    stock = Stock.create
+    @location.stock = stock
     respond_to do |format|
       if @location.save
         format.html { redirect_to @location, notice: "Location was successfully created." }

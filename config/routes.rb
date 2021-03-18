@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  post 'company_token' => 'company_token#create'
   resources :items
   resources :stocks
   resources :locations
