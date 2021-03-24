@@ -6,8 +6,14 @@ class CompaniesController < ApplicationController
     @companies = Company.all
   end
 
-  # GET /companies/1 or /companies/1.json
+  # GET /companyprofile/1 or /companyprofile/1.json
   def show
+    companyData = Company.where(id: params[:id]).first
+    @company = {
+      company: companyData,
+      locations: companyData.locations,
+    }
+    render json: @company
   end
 
   # GET /companies/new

@@ -7,8 +7,15 @@ class LocationsController < ApplicationController
     @locations = Location.all
   end
 
-  # GET /locations/1 or /locations/1.json
+  # GET /locationprofile/1 or /locationprofile/1.json
   def show
+    locationData = Location.where(id: params[:id]).first
+    @location = {
+      parentCompany: locationData.company,
+      location: locationData,
+      stock: locationData.stock.items,
+    }
+    render json: @location
   end
 
   # GET /locations/new
@@ -25,6 +32,7 @@ class LocationsController < ApplicationController
     @location = Location.new(location_params)
     stock = Stock.create
     @location.stock = stock
+    @location.company = current_user
     respond_to do |format|
       if @location.save
         format.html { redirect_to @location, notice: "Location was successfully created." }
@@ -66,6 +74,6 @@ class LocationsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def location_params
-      params.require(:location).permit(:address, :phone, :manager, :company_id)
+      params.require(:location).permit(:address, :phone, :manager, :company_id, :is_suppler)
     end
 end

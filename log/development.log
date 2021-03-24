@@ -956,3 +956,1893 @@ Migrating to AddIsSupplierToLocations (20210318093214)
   ↳ bin/rails:4
   [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ bin/rails:4
+  [1m[36mLocation Load (4.9ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" ORDER BY "locations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mLocation Load (0.8ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" ORDER BY "locations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCompany Load (3.5ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCompany Load (1.6ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" ORDER BY "companies"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mLocation Load (1.9ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."company_id" = $1[0m  [["company_id", 2]]
+  [1m[36mCompany Load (0.6ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" ORDER BY "companies"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mLocation Load (0.4ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."company_id" = $1[0m  [["company_id", 2]]
+  [1m[36mCompany Load (0.9ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" ORDER BY "companies"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mLocation Load (0.6ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."company_id" = $1[0m  [["company_id", 2]]
+  [1m[36mCompany Load (0.8ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" ORDER BY "companies"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mLocation Load (1.0ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."company_id" = $1 AND "locations"."id" = $2[0m  [["company_id", 2], ["id", 1]]
+  [1m[36mCompany Load (2.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" ORDER BY "companies"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mLocation Load (2.6ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."company_id" = $1 AND "locations"."id" = $2 LIMIT $3[0m  [["company_id", 2], ["id", 1], ["LIMIT", 11]]
+  [1m[36mCompany Load (0.8ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" ORDER BY "companies"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mLocation Load (0.6ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."company_id" = $1 AND "locations"."id" = $2 LIMIT $3[0m  [["company_id", 2], ["id", 1], ["LIMIT", 11]]
+  [1m[36mCompany Load (0.9ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" ORDER BY "companies"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mLocation Load (0.5ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."company_id" = $1 AND "locations"."id" = $2[0m  [["company_id", 2], ["id", 1]]
+  [1m[36mCompany Load (1.9ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" ORDER BY "companies"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mLocation Load (1.0ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."company_id" = $1 AND "locations"."id" = $2[0m  [["company_id", 2], ["id", 1]]
+  [1m[36mCompany Load (0.7ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" ORDER BY "companies"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mLocation Load (0.8ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."company_id" = $1 ORDER BY "locations"."id" ASC LIMIT $2[0m  [["company_id", 2], ["LIMIT", 1]]
+  [1m[36mCompany Load (1.5ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" ORDER BY "companies"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mLocation Load (1.0ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."company_id" = $1 ORDER BY "locations"."id" ASC LIMIT $2[0m  [["company_id", 2], ["LIMIT", 1]]
+  [1m[36mStock Load (3.1ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."location_id" = $1 LIMIT $2[0m  [["location_id", 1], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.8ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" ORDER BY "companies"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mLocation Load (0.7ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."company_id" = $1 ORDER BY "locations"."id" ASC LIMIT $2[0m  [["company_id", 2], ["LIMIT", 1]]
+  [1m[36mStock Load (0.6ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."location_id" = $1 LIMIT $2[0m  [["location_id", 1], ["LIMIT", 1]]
+  [1m[36mItem Load (2.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."stock_id" = $1[0m  [["stock_id", 1]]
+  [1m[36mItem Load (2.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."stock_id" = $1 AND "items"."name" = $2[0m  [["stock_id", 1], ["name", "Iron"]]
+  [1m[36mItem Load (0.8ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."stock_id" = $1 AND "items"."name" = $2[0m  [["stock_id", 1], ["name", "Iron"]]
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.7ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mItem Load (0.7ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Update (8.5ms)[0m  [1m[33mUPDATE "items" SET "amount" = $1, "updated_at" = $2 WHERE "items"."id" = $3[0m  [["amount", 1500], ["updated_at", "2021-03-18 10:23:54.842330"], ["id", 1]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Update (1.7ms)[0m  [1m[33mUPDATE "items" SET "restock" = $1, "updated_at" = $2 WHERE "items"."id" = $3[0m  [["restock", 200], ["updated_at", "2021-03-18 10:24:27.449756"], ["id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mCompany Load (2.0ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" ORDER BY "companies"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" ORDER BY "companies"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" ORDER BY "companies"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (1.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Update (1.6ms)[0m  [1m[33mUPDATE "items" SET "amount" = $1, "updated_at" = $2 WHERE "items"."id" = $3[0m  [["amount", 3000], ["updated_at", "2021-03-18 10:29:34.837937"], ["id", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mLocation Load (1.3ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."address" = $1[0m  [["address", "testdress"]]
+  [1m[36mLocation Load (0.9ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."address" = $1 AND "locations"."company_id" = $2[0m  [["address", "testdress"], ["company_id", 0]]
+  [1m[36mLocation Load (1.2ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."address" = $1 AND "locations"."company_id" = $2[0m  [["address", "testdress"], ["company_id", 1]]
+  [1m[36mLocation Load (0.5ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."address" = $1 AND "locations"."company_id" = $2[0m  [["address", "testdress"], ["company_id", 2]]
+  [1m[36mCompany Load (0.7ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" ORDER BY "companies"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mLocation Load (0.5ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."company_id" = $1 AND "locations"."address" = $2[0m  [["company_id", 2], ["address", "testdress"]]
+  [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" ORDER BY "companies"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mLocation Load (0.5ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."company_id" = $1 AND "locations"."address" = $2 LIMIT $3[0m  [["company_id", 2], ["address", "testdress"], ["LIMIT", 11]]
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" ORDER BY "companies"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mLocation Load (1.8ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."company_id" = $1 AND "locations"."address" = $2 LIMIT $3[0m  [["company_id", 2], ["address", "testdress"], ["LIMIT", 11]]
+  [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" ORDER BY "companies"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mLocation Load (0.4ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."company_id" = $1 AND "locations"."address" = $2[0m  [["company_id", 2], ["address", "testdress"]]
+  [1m[36mCompany Load (18.4ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."address" = $1[0m  [["address", "testdress"]]
+  [1m[36mCompany Load (0.6ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."address" = $1[0m  [["address", "testdress"]]
+  [1m[36mCompany Load (5.6ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."address" = $1 ORDER BY "companies"."id" ASC LIMIT $2[0m  [["address", "testdress"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.6ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."address" = $1 ORDER BY "companies"."id" ASC LIMIT $2[0m  [["address", "testdress"], ["LIMIT", 1]]
+  [1m[36mLocation Load (3.8ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."company_id" = $1[0m  [["company_id", 2]]
+  [1m[36mCompany Load (7.8ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."address" = $1 ORDER BY "companies"."id" ASC LIMIT $2[0m  [["address", "testdress"], ["LIMIT", 1]]
+  [1m[36mLocation Load (7.5ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."company_id" = $1 AND "locations"."address" = $2[0m  [["company_id", 2], ["address", "testdress"]]
+  [1m[36mCompany Load (1.8ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."address" = $1 ORDER BY "companies"."id" ASC LIMIT $2[0m  [["address", "testdress"], ["LIMIT", 1]]
+  [1m[36mLocation Load (0.6ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."company_id" = $1 AND "locations"."address" = $2[0m  [["company_id", 2], ["address", "testdres"]]
+  [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."address" = $1 ORDER BY "companies"."id" ASC LIMIT $2[0m  [["address", "testdress"], ["LIMIT", 1]]
+  [1m[36mLocation Load (0.4ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."company_id" = $1 AND "locations"."address" = $2[0m  [["company_id", 2], ["address", "testdress"]]
+  [1m[36mLocation Load (9.5ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" ORDER BY "locations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mStock Load (4.0ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" ORDER BY "stocks"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mStock Load (0.5ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" ORDER BY "stocks"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mStock Load (1.4ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" ORDER BY "stocks"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mItem Load (4.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."stock_id" = $1[0m  [["stock_id", 1]]
+  [1m[36mStock Load (2.3ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" ORDER BY "stocks"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mStock Load (0.6ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" ORDER BY "stocks"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mStock Load (3.4ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" ORDER BY "stocks"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mStock Load (1.1ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" ORDER BY "stocks"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mStock Load (2.5ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" ORDER BY "stocks"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mItem Load (0.8ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."stock_id" = $1[0m  [["stock_id", 1]]
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."stock_id" = $1 LIMIT $2[0m  [["stock_id", 1], ["LIMIT", 11]]
+  [1m[36mStock Load (0.5ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" ORDER BY "stocks"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."stock_id" = $1[0m  [["stock_id", 1]]
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."stock_id" = $1 LIMIT $2[0m  [["stock_id", 1], ["LIMIT", 11]]
+  [1m[36mStock Load (0.5ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" ORDER BY "stocks"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."stock_id" = $1[0m  [["stock_id", 1]]
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."stock_id" = $1 LIMIT $2[0m  [["stock_id", 1], ["LIMIT", 11]]
+  [1m[36mStock Load (0.6ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" ORDER BY "stocks"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mItem Load (1.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."stock_id" = $1[0m  [["stock_id", 1]]
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."stock_id" = $1 LIMIT $2[0m  [["stock_id", 1], ["LIMIT", 11]]
+  [1m[36mStock Load (3.3ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" ORDER BY "stocks"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mItem Load (8.9ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."stock_id" = $1 AND "items"."name" = $2[0m  [["stock_id", 1], ["name", "Iron"]]
+  [1m[36mStock Load (0.5ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" ORDER BY "stocks"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mItem Exists (7.3ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."stock_id" = $1 AND "items"."name" = $2 LIMIT $3[0m  [["stock_id", 1], ["name", "Iron"], ["LIMIT", 1]]
+  [1m[36mStock Load (0.7ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" ORDER BY "stocks"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mItem Exists (2.3ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."stock_id" = $1 AND "items"."name" = $2 LIMIT $3[0m  [["stock_id", 1], ["name", "Irons"], ["LIMIT", 1]]
+  [1m[36mStock Load (2.3ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" ORDER BY "stocks"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mItem Load (3.0ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."stock_id" = $1[0m  [["stock_id", 1]]
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."stock_id" = $1 LIMIT $2[0m  [["stock_id", 1], ["LIMIT", 11]]
+  [1m[36mStock Load (1.7ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" ORDER BY "stocks"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."stock_id" = $1[0m  [["stock_id", 1]]
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."stock_id" = $1 LIMIT $2[0m  [["stock_id", 1], ["LIMIT", 11]]
+  [1m[36mLocation Load (28.2ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."address" = $1[0m  [["address", "testdress"]]
+  [1m[36mLocation Load (1.5ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."address" = $1 LIMIT $2[0m  [["address", "testdress"], ["LIMIT", 11]]
+  [1m[36mLocation Load (5.0ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."address" = $1 ORDER BY "locations"."id" ASC LIMIT $2[0m  [["address", "testdress"], ["LIMIT", 1]]
+  [1m[36mStock Load (1.6ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."location_id" = $1 LIMIT $2[0m  [["location_id", 1], ["LIMIT", 1]]
+  [1m[36mCompany Load (4.4ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" ORDER BY "companies"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mLocation Load (2.4ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."company_id" = $1[0m  [["company_id", 2]]
+  [1m[36mLocation Load (3.5ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."address" = $1 ORDER BY "locations"."id" ASC LIMIT $2[0m  [["address", "testdress"], ["LIMIT", 1]]
+  [1m[36mStock Load (2.8ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."location_id" = $1 LIMIT $2[0m  [["location_id", 1], ["LIMIT", 1]]
+  [1m[36mLocation Load (3.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."address" = $1 ORDER BY "locations"."id" ASC LIMIT $2[0m  [["address", "testdress"], ["LIMIT", 1]]
+  [1m[36mStock Load (0.5ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."location_id" = $1 LIMIT $2[0m  [["location_id", 1], ["LIMIT", 1]]
+  [1m[35m (3.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mStock Load (0.7ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mItem Create (83.7ms)[0m  [1m[32mINSERT INTO "items" ("amount", "name", "restock", "stock_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["amount", 1], ["name", "asd"], ["restock", 0], ["stock_id", 1], ["created_at", "2021-03-18 13:42:27.592003"], ["updated_at", "2021-03-18 13:42:27.592003"]]
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mLocation Load (0.7ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."address" = $1 ORDER BY "locations"."id" ASC LIMIT $2[0m  [["address", "testdress"], ["LIMIT", 1]]
+  [1m[36mStock Load (0.4ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."location_id" = $1 LIMIT $2[0m  [["location_id", 1], ["LIMIT", 1]]
+  [1m[36mItem Load (1.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."stock_id" = $1 AND "items"."name" = $2[0m  [["stock_id", 1], ["name", "asd"]]
+  [1m[36mLocation Load (4.3ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."address" = $1 ORDER BY "locations"."id" ASC LIMIT $2[0m  [["address", "testdress"], ["LIMIT", 1]]
+  [1m[36mStock Load (0.3ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."location_id" = $1 LIMIT $2[0m  [["location_id", 1], ["LIMIT", 1]]
+  [1m[36mLocation Load (0.7ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."address" = $1 ORDER BY "locations"."id" ASC LIMIT $2[0m  [["address", "testdress"], ["LIMIT", 1]]
+  [1m[36mStock Load (0.3ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."location_id" = $1 LIMIT $2[0m  [["location_id", 1], ["LIMIT", 1]]
+  [1m[36mLocation Load (0.5ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."address" = $1 ORDER BY "locations"."id" ASC LIMIT $2[0m  [["address", "testdress"], ["LIMIT", 1]]
+  [1m[36mStock Load (0.4ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."location_id" = $1 LIMIT $2[0m  [["location_id", 1], ["LIMIT", 1]]
+  [1m[36mLocation Load (0.5ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."address" = $1 ORDER BY "locations"."id" ASC LIMIT $2[0m  [["address", "testdress"], ["LIMIT", 1]]
+  [1m[36mStock Load (0.3ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."location_id" = $1 LIMIT $2[0m  [["location_id", 1], ["LIMIT", 1]]
+  [1m[36mLocation Load (0.4ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."address" = $1 ORDER BY "locations"."id" ASC LIMIT $2[0m  [["address", "testdress"], ["LIMIT", 1]]
+  [1m[36mStock Load (0.3ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."location_id" = $1 LIMIT $2[0m  [["location_id", 1], ["LIMIT", 1]]
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."stock_id" = $1 AND "items"."name" = $2[0m  [["stock_id", 1], ["name", "asd"]]
+  [1m[36mLocation Load (0.7ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."address" = $1 ORDER BY "locations"."id" ASC LIMIT $2[0m  [["address", "testdress"], ["LIMIT", 1]]
+  [1m[36mStock Load (0.4ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."location_id" = $1 LIMIT $2[0m  [["location_id", 1], ["LIMIT", 1]]
+  [1m[36mItem Destroy (13.8ms)[0m  [1m[31mDELETE FROM "items" WHERE "items"."id" IN (SELECT "items"."id" FROM "items" WHERE "items"."stock_id" = $1 AND "items"."name" = $2)[0m  [["stock_id", 1], ["name", "asd"]]
+  [1m[36mItem Load (1.4ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  [1m[35m (1.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Update (11.2ms)[0m  [1m[33mUPDATE "items" SET "amount" = $1, "updated_at" = $2 WHERE "items"."id" = $3[0m  [["amount", 1500], ["updated_at", "2021-03-18 14:02:30.753972"], ["id", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mItem Update All (14.5ms)[0m  [1m[33mUPDATE "items" SET "amount" = COALESCE("amount", 0) + 1 WHERE "items"."id" = $1[0m  [["id", 1500]]
+  [1m[36mItem Update All (0.8ms)[0m  [1m[33mUPDATE "items" SET "amount" = COALESCE("amount", 0) + 1 WHERE "items"."id" = $1[0m  [["id", 1500]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Update (1.7ms)[0m  [1m[33mUPDATE "items" SET "amount" = $1, "updated_at" = $2 WHERE "items"."id" = $3[0m  [["amount", nil], ["updated_at", "2021-03-18 14:12:23.710885"], ["id", 1]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Update (0.8ms)[0m  [1m[33mUPDATE "items" SET "amount" = $1, "updated_at" = $2 WHERE "items"."id" = $3[0m  [["amount", 1500], ["updated_at", "2021-03-18 14:12:29.740675"], ["id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mItem Update All (24.7ms)[0m  [1m[33mUPDATE "items" SET "1500" = COALESCE("1500", 0) + 1 WHERE "items"."id" = $1[0m  [["id", nil]]
+  [1m[36mItem Update All (2.0ms)[0m  [1m[33mUPDATE "items" SET "amount" = COALESCE("amount", 0) + 1 WHERE "items"."id" = $1[0m  [["id", 1500]]
+  [1m[36mItem Update All (0.9ms)[0m  [1m[33mUPDATE "items" SET "amount" = COALESCE("amount", 0) + 1 WHERE "items"."id" = $1[0m  [["id", 1500]]
+  [1m[36mCompany Load (3.6ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."id" = $1[0m  [["id", 1]]
+  [1m[36mCompany Load (1.8ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."id" = $1[0m  [["id", 2]]
+  [1m[36mCompany Load (0.9ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 11]]
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 ORDER BY "companies"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mLocation Load (2.7ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."company_id" = $1[0m  [["company_id", 2]]
+  [1m[36mCompany Load (0.7ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 ORDER BY "companies"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCompany Load (1.4ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" ORDER BY "companies"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCompany Load (0.7ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" ORDER BY "companies"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mLocation Load (0.6ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."company_id" = $1[0m  [["company_id", 2]]
+  [1m[36mCompany Load (1.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" ORDER BY "companies"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" ORDER BY "companies"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Started GET "/" for ::1 at 2021-03-23 22:43:04 +1300
+  [1m[35m (6.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/wongivan/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/wongivan/.rvm/gems/ruby-2.4.1/gems/railties-5.2.4.5/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/wongivan/.rvm/gems/ruby-2.4.1/gems/railties-5.2.4.5/lib/rails/templates/rails/welcome/index.html.erb (6.6ms)
+Completed 200 OK in 51ms (Views: 40.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/companyprofile/2" for ::1 at 2021-03-23 22:43:11 +1300
+Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCompany Load (8.4ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:68
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 ORDER BY "companies"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:11
+  [1m[36mLocation Load (7.7ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."company_id" = $1[0m  [["company_id", 2]]
+  ↳ app/controllers/companies_controller.rb:16
+Completed 200 OK in 129ms (Views: 28.3ms | ActiveRecord: 53.0ms)
+
+
+Started GET "/companyprofile/2" for ::1 at 2021-03-23 22:49:23 +1300
+Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCompany Load (2.5ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:68
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 ORDER BY "companies"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:11
+  [1m[36mLocation Load (2.1ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."company_id" = $1[0m  [["company_id", 2]]
+  ↳ app/controllers/companies_controller.rb:16
+Completed 200 OK in 36ms (Views: 12.9ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/companyprofile/2" for ::1 at 2021-03-23 22:49:28 +1300
+Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCompany Load (1.0ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:68
+  [1m[36mCompany Load (0.6ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 ORDER BY "companies"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:11
+  [1m[36mLocation Load (13.6ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."company_id" = $1[0m  [["company_id", 2]]
+  ↳ app/controllers/companies_controller.rb:16
+Completed 200 OK in 24ms (Views: 5.0ms | ActiveRecord: 15.3ms)
+
+
+Started GET "/companyprofile/2" for ::1 at 2021-03-23 22:49:46 +1300
+Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:68
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 ORDER BY "companies"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:11
+  [1m[36mLocation Load (0.5ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."company_id" = $1[0m  [["company_id", 2]]
+  ↳ app/controllers/companies_controller.rb:16
+Completed 200 OK in 7ms (Views: 2.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/companyprofile/2" for ::1 at 2021-03-23 22:50:45 +1300
+Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCompany Load (0.9ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:68
+  [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 ORDER BY "companies"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:11
+  [1m[36mLocation Load (1.4ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."company_id" = $1[0m  [["company_id", 2]]
+  ↳ app/controllers/companies_controller.rb:16
+Completed 200 OK in 15ms (Views: 4.6ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/companyprofile/2" for ::1 at 2021-03-23 22:50:55 +1300
+Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCompany Load (0.7ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:68
+  [1m[36mCompany Load (0.8ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 ORDER BY "companies"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:11
+  [1m[36mLocation Load (0.5ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."company_id" = $1[0m  [["company_id", 2]]
+  ↳ app/controllers/companies_controller.rb:16
+Completed 200 OK in 10ms (Views: 3.9ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/companyprofile/2" for ::1 at 2021-03-23 22:50:58 +1300
+Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:68
+  [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 ORDER BY "companies"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:11
+  [1m[36mLocation Load (0.9ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."company_id" = $1[0m  [["company_id", 2]]
+  ↳ app/controllers/companies_controller.rb:16
+Completed 200 OK in 10ms (Views: 3.9ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/companyprofile/2" for ::1 at 2021-03-23 22:51:50 +1300
+Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCompany Load (0.8ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:68
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 ORDER BY "companies"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:11
+  [1m[36mLocation Load (0.4ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."company_id" = $1[0m  [["company_id", 2]]
+  ↳ app/controllers/companies_controller.rb:16
+Completed 200 OK in 14ms (Views: 3.8ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/companyprofile/2" for ::1 at 2021-03-23 22:52:20 +1300
+Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCompany Load (5.6ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:68
+  [1m[36mCompany Load (18.2ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 ORDER BY "companies"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:11
+  [1m[36mLocation Load (4.4ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."company_id" = $1[0m  [["company_id", 2]]
+  ↳ app/controllers/companies_controller.rb:16
+Completed 200 OK in 37ms (Views: 4.2ms | ActiveRecord: 28.2ms)
+
+
+Started GET "/companyprofile/2" for ::1 at 2021-03-23 22:52:30 +1300
+Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:68
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 ORDER BY "companies"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:11
+  [1m[36mLocation Load (0.3ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."company_id" = $1[0m  [["company_id", 2]]
+  ↳ app/controllers/companies_controller.rb:16
+Completed 200 OK in 7ms (Views: 2.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/companyprofile/2" for ::1 at 2021-03-23 22:52:39 +1300
+Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:68
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 ORDER BY "companies"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:11
+  [1m[36mLocation Load (0.3ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."company_id" = $1[0m  [["company_id", 2]]
+  ↳ app/controllers/companies_controller.rb:16
+Completed 200 OK in 6ms (Views: 2.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/companyprofile/2" for ::1 at 2021-03-23 22:53:00 +1300
+Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:68
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 ORDER BY "companies"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:11
+  [1m[36mLocation Load (0.4ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."company_id" = $1[0m  [["company_id", 2]]
+  ↳ app/controllers/companies_controller.rb:16
+Completed 200 OK in 10ms (Views: 3.2ms | ActiveRecord: 1.1ms)
+
+
+  [1m[35m (3.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(960148978086182850)[0m
+  ↳ bin/rails:4
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+Migrating to AddPhoneToCompany (20210323095411)
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[35m (24.0ms)[0m  [1m[35mALTER TABLE "companies" ADD "phone" character varying[0m
+  ↳ db/migrate/20210323095411_add_phone_to_company.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (3.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210323095411"]]
+  ↳ bin/rails:4
+  [1m[35m (6.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::InternalMetadata Load (2.8ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:4
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(960148978086182850)[0m
+  ↳ bin/rails:4
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+Started GET "/companyprofile/2" for ::1 at 2021-03-23 22:54:49 +1300
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/wongivan/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCompany Load (6.5ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:68
+  [1m[36mCompany Load (0.9ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:68
+  [1m[36mCompany Load (0.8ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 ORDER BY "companies"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:11
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 ORDER BY "companies"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:11
+  [1m[36mLocation Load (0.4ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."company_id" = $1[0m  [["company_id", 2]]
+  ↳ app/controllers/companies_controller.rb:16
+Completed 200 OK in 80ms (Views: 16.1ms | ActiveRecord: 33.4ms)
+
+
+Started GET "/companyprofile/2" for ::1 at 2021-03-23 22:55:05 +1300
+Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCompany Load (1.5ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:68
+  [1m[36mCompany Load (2.7ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 ORDER BY "companies"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:11
+  [1m[36mLocation Load (0.5ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."company_id" = $1[0m  [["company_id", 2]]
+  ↳ app/controllers/companies_controller.rb:16
+Completed 200 OK in 15ms (Views: 4.7ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/companyprofile/2" for ::1 at 2021-03-23 22:57:12 +1300
+Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCompany Load (1.0ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:68
+  [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 ORDER BY "companies"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:11
+  [1m[36mLocation Load (0.4ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."company_id" = $1[0m  [["company_id", 2]]
+  ↳ app/controllers/companies_controller.rb:16
+Completed 200 OK in 31ms (Views: 12.3ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/companyprofile/2" for ::1 at 2021-03-23 22:57:42 +1300
+Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:68
+  [1m[36mCompany Load (0.6ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 ORDER BY "companies"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:11
+  [1m[36mLocation Load (0.3ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."company_id" = $1[0m  [["company_id", 2]]
+  ↳ app/controllers/companies_controller.rb:16
+Completed 200 OK in 13ms (Views: 7.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/companyprofile/2" for ::1 at 2021-03-23 22:57:54 +1300
+Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCompany Load (4.6ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:68
+  [1m[36mCompany Load (7.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 ORDER BY "companies"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:11
+  [1m[36mLocation Load (0.8ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."company_id" = $1[0m  [["company_id", 2]]
+  ↳ app/controllers/companies_controller.rb:16
+Completed 200 OK in 98ms (Views: 37.1ms | ActiveRecord: 12.5ms)
+
+
+Started GET "/companyprofile/2" for ::1 at 2021-03-23 22:59:25 +1300
+Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCompany Load (1.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:68
+  [1m[36mCompany Load (0.6ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 ORDER BY "companies"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:11
+  [1m[36mLocation Load (0.6ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."company_id" = $1[0m  [["company_id", 2]]
+  ↳ app/controllers/companies_controller.rb:16
+Completed 200 OK in 26ms (Views: 5.3ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/companyprofile/2" for ::1 at 2021-03-23 22:59:43 +1300
+Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCompany Load (1.4ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:68
+  [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 ORDER BY "companies"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:11
+  [1m[36mLocation Load (0.3ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."company_id" = $1[0m  [["company_id", 2]]
+  ↳ app/controllers/companies_controller.rb:16
+Completed 200 OK in 9ms (Views: 3.4ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/companyprofile/2" for ::1 at 2021-03-23 22:59:49 +1300
+Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCompany Load (0.6ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:68
+  [1m[36mCompany Load (0.7ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 ORDER BY "companies"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:11
+  [1m[36mLocation Load (1.0ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."company_id" = $1[0m  [["company_id", 2]]
+  ↳ app/controllers/companies_controller.rb:16
+Completed 200 OK in 11ms (Views: 4.3ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/companyprofile/2" for ::1 at 2021-03-23 23:00:14 +1300
+Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCompany Load (0.7ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:68
+  [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 ORDER BY "companies"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:11
+  [1m[36mLocation Load (0.3ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."company_id" = $1[0m  [["company_id", 2]]
+  ↳ app/controllers/companies_controller.rb:16
+Completed 200 OK in 9ms (Views: 3.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/companyprofile/2" for ::1 at 2021-03-23 23:00:33 +1300
+Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:68
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 ORDER BY "companies"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:11
+  [1m[36mLocation Load (0.4ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."company_id" = $1[0m  [["company_id", 2]]
+  ↳ app/controllers/companies_controller.rb:16
+Completed 200 OK in 7ms (Views: 3.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/companyprofile/2" for ::1 at 2021-03-23 23:00:59 +1300
+Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:68
+  [1m[36mCompany Load (1.0ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 ORDER BY "companies"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:11
+  [1m[36mLocation Load (0.6ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."company_id" = $1[0m  [["company_id", 2]]
+  ↳ app/controllers/companies_controller.rb:16
+Completed 200 OK in 11ms (Views: 3.6ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/companyprofile/2" for ::1 at 2021-03-23 23:02:40 +1300
+Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:68
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 ORDER BY "companies"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:11
+  [1m[36mLocation Load (0.3ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."company_id" = $1[0m  [["company_id", 2]]
+  ↳ app/controllers/companies_controller.rb:16
+Completed 200 OK in 10ms (Views: 3.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/companyprofile/2" for ::1 at 2021-03-23 23:02:43 +1300
+Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:68
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 ORDER BY "companies"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:11
+  [1m[36mLocation Load (0.5ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."company_id" = $1[0m  [["company_id", 2]]
+  ↳ app/controllers/companies_controller.rb:16
+Completed 200 OK in 7ms (Views: 2.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/companyprofile/2" for ::1 at 2021-03-23 23:02:52 +1300
+Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:68
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 ORDER BY "companies"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:11
+  [1m[36mLocation Load (0.3ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."company_id" = $1[0m  [["company_id", 2]]
+  ↳ app/controllers/companies_controller.rb:16
+Completed 200 OK in 6ms (Views: 2.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/companyprofile/2" for ::1 at 2021-03-23 23:02:56 +1300
+Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCompany Load (0.7ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:68
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 ORDER BY "companies"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:11
+  [1m[36mLocation Load (0.3ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."company_id" = $1[0m  [["company_id", 2]]
+  ↳ app/controllers/companies_controller.rb:16
+Completed 200 OK in 6ms (Views: 1.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/companyprofile/2" for ::1 at 2021-03-23 23:03:18 +1300
+Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:68
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 ORDER BY "companies"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:11
+  [1m[36mLocation Load (0.4ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."company_id" = $1[0m  [["company_id", 2]]
+  ↳ app/controllers/companies_controller.rb:16
+Completed 200 OK in 8ms (Views: 3.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/companyprofile/2" for ::1 at 2021-03-23 23:03:47 +1300
+Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCompany Load (1.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:68
+  [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 ORDER BY "companies"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:11
+  [1m[36mLocation Load (0.5ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."company_id" = $1[0m  [["company_id", 2]]
+  ↳ app/controllers/companies_controller.rb:16
+Completed 200 OK in 14ms (Views: 6.6ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/companyprofile/2" for ::1 at 2021-03-23 23:05:46 +1300
+Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCompany Load (1.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:68
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 ORDER BY "companies"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:11
+  [1m[36mLocation Load (0.4ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."company_id" = $1[0m  [["company_id", 2]]
+  ↳ app/controllers/companies_controller.rb:16
+Completed 200 OK in 28ms (Views: 8.9ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/locationprofile/1" for ::1 at 2021-03-23 23:05:48 +1300
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mLocation Load (1.3ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:72
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 1.3ms)
+
+
+  
+NameError (uninitialized constant User):
+  
+activesupport (5.2.4.5) lib/active_support/inflector/methods.rb:283:in `const_get'
+activesupport (5.2.4.5) lib/active_support/inflector/methods.rb:283:in `block in constantize'
+activesupport (5.2.4.5) lib/active_support/inflector/methods.rb:281:in `each'
+activesupport (5.2.4.5) lib/active_support/inflector/methods.rb:281:in `inject'
+activesupport (5.2.4.5) lib/active_support/inflector/methods.rb:281:in `constantize'
+activesupport (5.2.4.5) lib/active_support/core_ext/string/inflections.rb:68:in `constantize'
+knock (2.1.1) lib/knock/authenticable.rb:28:in `authenticate_entity'
+knock (2.1.1) lib/knock/authenticable.rb:18:in `method_missing'
+activesupport (5.2.4.5) lib/active_support/callbacks.rb:426:in `block in make_lambda'
+activesupport (5.2.4.5) lib/active_support/callbacks.rb:198:in `block (2 levels) in halting'
+actionpack (5.2.4.5) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.2.4.5) lib/active_support/callbacks.rb:199:in `block in halting'
+activesupport (5.2.4.5) lib/active_support/callbacks.rb:513:in `block in invoke_before'
+activesupport (5.2.4.5) lib/active_support/callbacks.rb:513:in `each'
+activesupport (5.2.4.5) lib/active_support/callbacks.rb:513:in `invoke_before'
+activesupport (5.2.4.5) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.2.4.5) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.4.5) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.4.5) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.4.5) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.4.5) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.4.5) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.4.5) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.4.5) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.4.5) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.4.5) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.4.5) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.4.5) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.4.5) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.4.5) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.4.5) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.4.5) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.4.5) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.4.5) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.4.5) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (5.2.4.5) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (5.2.4.5) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.4.5) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.4.5) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.5) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.5) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.5) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.5) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.5) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.5) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.5) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.5) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.5) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.5) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.5) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.5) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.5) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.5) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (5.2.4.5) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/locationprofile/1" for ::1 at 2021-03-23 23:06:47 +1300
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mLocation Load (0.8ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:72
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/locationprofile/1" for ::1 at 2021-03-23 23:06:48 +1300
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mLocation Load (0.6ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:72
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/locationprofile/1" for ::1 at 2021-03-23 23:06:48 +1300
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mLocation Load (2.3ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:72
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 401 Unauthorized in 5ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/companyprofile/2" for ::1 at 2021-03-23 23:06:55 +1300
+Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCompany Load (3.6ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:68
+  [1m[36mCompany Load (0.8ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 ORDER BY "companies"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:11
+  [1m[36mLocation Load (2.5ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."company_id" = $1[0m  [["company_id", 2]]
+  ↳ app/controllers/companies_controller.rb:16
+Completed 200 OK in 53ms (Views: 24.0ms | ActiveRecord: 6.9ms)
+
+
+Started GET "/locationprofile/1" for ::1 at 2021-03-23 23:06:57 +1300
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mLocation Load (0.7ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:72
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/companyprofile/2" for ::1 at 2021-03-23 23:07:05 +1300
+Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCompany Load (2.5ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:68
+  [1m[36mCompany Load (1.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 ORDER BY "companies"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:11
+  [1m[36mLocation Load (0.4ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."company_id" = $1[0m  [["company_id", 2]]
+  ↳ app/controllers/companies_controller.rb:16
+Completed 200 OK in 13ms (Views: 4.3ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/locationprofile/1" for ::1 at 2021-03-23 23:07:26 +1300
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mLocation Load (0.4ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:72
+  [1m[36mLocation Load (0.5ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 ORDER BY "locations"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:12
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:14
+  [1m[36mStock Load (3.5ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."location_id" = $1 LIMIT $2[0m  [["location_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:16
+  [1m[36mItem Load (2.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."stock_id" = $1[0m  [["stock_id", 1]]
+  ↳ app/controllers/locations_controller.rb:18
+Completed 200 OK in 137ms (Views: 12.2ms | ActiveRecord: 38.4ms)
+
+
+Started GET "/companyprofile/2" for ::1 at 2021-03-23 23:07:58 +1300
+Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:68
+  [1m[36mCompany Load (1.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 ORDER BY "companies"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:11
+  [1m[36mLocation Load (0.4ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."company_id" = $1[0m  [["company_id", 2]]
+  ↳ app/controllers/companies_controller.rb:16
+Completed 200 OK in 14ms (Views: 5.3ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/locationprofile/1" for ::1 at 2021-03-23 23:07:59 +1300
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mLocation Load (0.4ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:72
+  [1m[36mLocation Load (0.5ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 ORDER BY "locations"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:12
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:14
+  [1m[36mStock Load (0.5ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."location_id" = $1 LIMIT $2[0m  [["location_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:16
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."stock_id" = $1[0m  [["stock_id", 1]]
+  ↳ app/controllers/locations_controller.rb:18
+Completed 200 OK in 14ms (Views: 4.1ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/locationprofile/1" for ::1 at 2021-03-23 23:08:09 +1300
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mLocation Load (0.3ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:72
+  [1m[36mLocation Load (0.5ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 ORDER BY "locations"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:12
+  [1m[36mCompany Load (0.9ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:14
+  [1m[36mStock Load (0.9ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."location_id" = $1 LIMIT $2[0m  [["location_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:16
+  [1m[36mItem Load (0.7ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."stock_id" = $1[0m  [["stock_id", 1]]
+  ↳ app/controllers/locations_controller.rb:18
+Completed 200 OK in 16ms (Views: 4.6ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/locationprofile/1" for ::1 at 2021-03-23 23:09:40 +1300
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mLocation Load (0.6ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:72
+  [1m[36mLocation Load (1.0ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 ORDER BY "locations"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:12
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:14
+  [1m[36mStock Load (0.8ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."location_id" = $1 LIMIT $2[0m  [["location_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:16
+  [1m[36mItem Load (0.7ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."stock_id" = $1[0m  [["stock_id", 1]]
+  ↳ app/controllers/locations_controller.rb:18
+Completed 200 OK in 25ms (Views: 6.6ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/companyprofile/2" for ::1 at 2021-03-23 23:09:48 +1300
+Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCompany Load (0.8ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:68
+  [1m[36mCompany Load (1.2ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 ORDER BY "companies"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:11
+  [1m[36mLocation Load (1.5ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."company_id" = $1[0m  [["company_id", 2]]
+  ↳ app/controllers/companies_controller.rb:16
+Completed 200 OK in 14ms (Views: 4.5ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/locationprofile/1" for ::1 at 2021-03-23 23:09:49 +1300
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mLocation Load (0.4ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:72
+  [1m[36mLocation Load (0.6ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 ORDER BY "locations"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:12
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:14
+  [1m[36mStock Load (0.6ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."location_id" = $1 LIMIT $2[0m  [["location_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:16
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."stock_id" = $1[0m  [["stock_id", 1]]
+  ↳ app/controllers/locations_controller.rb:18
+Completed 200 OK in 15ms (Views: 3.6ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/companyprofile/2" for ::1 at 2021-03-23 23:10:10 +1300
+Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCompany Load (1.9ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:68
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 ORDER BY "companies"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:11
+  [1m[36mLocation Load (0.5ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."company_id" = $1[0m  [["company_id", 2]]
+  ↳ app/controllers/companies_controller.rb:16
+Completed 200 OK in 24ms (Views: 10.3ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/locationprofile/1" for ::1 at 2021-03-23 23:10:11 +1300
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mLocation Load (0.4ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:72
+  [1m[36mLocation Load (0.7ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 ORDER BY "locations"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:12
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:14
+  [1m[36mStock Load (0.4ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."location_id" = $1 LIMIT $2[0m  [["location_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:16
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."stock_id" = $1[0m  [["stock_id", 1]]
+  ↳ app/controllers/locations_controller.rb:18
+Completed 200 OK in 14ms (Views: 2.7ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/locationprofile/1" for ::1 at 2021-03-23 23:10:14 +1300
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mLocation Load (0.8ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:72
+  [1m[36mLocation Load (0.5ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 ORDER BY "locations"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:12
+  [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:14
+  [1m[36mStock Load (18.9ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."location_id" = $1 LIMIT $2[0m  [["location_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:16
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."stock_id" = $1[0m  [["stock_id", 1]]
+  ↳ app/controllers/locations_controller.rb:18
+Completed 200 OK in 40ms (Views: 7.8ms | ActiveRecord: 21.1ms)
+
+
+Started GET "/locationprofile/1" for ::1 at 2021-03-23 23:10:23 +1300
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mLocation Load (0.3ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:72
+  [1m[36mLocation Load (0.3ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 ORDER BY "locations"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:12
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:14
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."location_id" = $1 LIMIT $2[0m  [["location_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:16
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."stock_id" = $1[0m  [["stock_id", 1]]
+  ↳ app/controllers/locations_controller.rb:18
+Completed 200 OK in 10ms (Views: 2.8ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/locationprofile/1" for ::1 at 2021-03-23 23:11:17 +1300
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mLocation Load (0.5ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:72
+  [1m[36mLocation Load (0.3ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 ORDER BY "locations"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:12
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:14
+  [1m[36mStock Load (0.5ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."location_id" = $1 LIMIT $2[0m  [["location_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:16
+  [1m[36mItem Load (0.8ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."stock_id" = $1[0m  [["stock_id", 1]]
+  ↳ app/controllers/locations_controller.rb:18
+Completed 200 OK in 22ms (Views: 4.9ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/locationprofile/1" for ::1 at 2021-03-23 23:11:31 +1300
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mLocation Load (2.6ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:72
+  [1m[36mLocation Load (0.3ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 ORDER BY "locations"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:12
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:14
+  [1m[36mStock Load (0.4ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."location_id" = $1 LIMIT $2[0m  [["location_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:16
+  [1m[36mItem Load (5.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."stock_id" = $1[0m  [["stock_id", 1]]
+  ↳ app/controllers/locations_controller.rb:18
+Completed 200 OK in 31ms (Views: 4.5ms | ActiveRecord: 9.1ms)
+
+
+Started GET "/locationprofile/1" for ::1 at 2021-03-23 23:11:51 +1300
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mLocation Load (0.3ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:72
+  [1m[36mLocation Load (0.3ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 ORDER BY "locations"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:12
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:14
+  [1m[36mStock Load (0.4ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."location_id" = $1 LIMIT $2[0m  [["location_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:16
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."stock_id" = $1[0m  [["stock_id", 1]]
+  ↳ app/controllers/locations_controller.rb:18
+Completed 200 OK in 15ms (Views: 4.5ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/locationprofile/1" for ::1 at 2021-03-23 23:12:00 +1300
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mLocation Load (0.3ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:72
+  [1m[36mLocation Load (0.3ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 ORDER BY "locations"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:12
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:14
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."location_id" = $1 LIMIT $2[0m  [["location_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:16
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."stock_id" = $1[0m  [["stock_id", 1]]
+  ↳ app/controllers/locations_controller.rb:18
+Completed 200 OK in 52ms (Views: 2.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/locationprofile/1" for ::1 at 2021-03-23 23:12:52 +1300
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mLocation Load (0.3ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:72
+  [1m[36mLocation Load (0.3ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 ORDER BY "locations"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:12
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:14
+  [1m[36mStock Load (0.3ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."location_id" = $1 LIMIT $2[0m  [["location_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:16
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."stock_id" = $1[0m  [["stock_id", 1]]
+  ↳ app/controllers/locations_controller.rb:18
+Completed 200 OK in 10ms (Views: 3.2ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/locationprofile/1" for ::1 at 2021-03-23 23:13:08 +1300
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mLocation Load (0.4ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:72
+  [1m[36mLocation Load (0.4ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 ORDER BY "locations"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:12
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:14
+  [1m[36mStock Load (0.3ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."location_id" = $1 LIMIT $2[0m  [["location_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:16
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."stock_id" = $1[0m  [["stock_id", 1]]
+  ↳ app/controllers/locations_controller.rb:18
+Completed 200 OK in 11ms (Views: 2.6ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/locationprofile/1" for ::1 at 2021-03-23 23:13:52 +1300
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mLocation Load (0.4ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:72
+  [1m[36mLocation Load (0.4ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 ORDER BY "locations"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:12
+  [1m[36mCompany Load (2.0ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:14
+  [1m[36mStock Load (0.4ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."location_id" = $1 LIMIT $2[0m  [["location_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:16
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."stock_id" = $1[0m  [["stock_id", 1]]
+  ↳ app/controllers/locations_controller.rb:18
+Completed 200 OK in 12ms (Views: 2.7ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/locationprofile/1" for ::1 at 2021-03-23 23:14:46 +1300
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mLocation Load (3.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:72
+  [1m[36mLocation Load (0.4ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 ORDER BY "locations"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:12
+  [1m[36mCompany Load (1.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:14
+  [1m[36mStock Load (0.6ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."location_id" = $1 LIMIT $2[0m  [["location_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:16
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."stock_id" = $1[0m  [["stock_id", 1]]
+  ↳ app/controllers/locations_controller.rb:18
+Completed 200 OK in 66ms (Views: 14.2ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/locationprofile/1" for ::1 at 2021-03-23 23:15:16 +1300
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mLocation Load (0.5ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:72
+  [1m[36mLocation Load (0.3ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 ORDER BY "locations"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:12
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:14
+  [1m[36mStock Load (0.3ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."location_id" = $1 LIMIT $2[0m  [["location_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:16
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."stock_id" = $1[0m  [["stock_id", 1]]
+  ↳ app/controllers/locations_controller.rb:18
+Completed 200 OK in 12ms (Views: 3.0ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/locationprofile/1" for ::1 at 2021-03-23 23:15:20 +1300
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mLocation Load (2.3ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:72
+  [1m[36mLocation Load (24.5ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 ORDER BY "locations"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:12
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:14
+  [1m[36mStock Load (2.5ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."location_id" = $1 LIMIT $2[0m  [["location_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:16
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."stock_id" = $1[0m  [["stock_id", 1]]
+  ↳ app/controllers/locations_controller.rb:18
+Completed 200 OK in 43ms (Views: 4.9ms | ActiveRecord: 30.2ms)
+
+
+Started GET "/locationprofile/1" for ::1 at 2021-03-23 23:15:27 +1300
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mLocation Load (14.2ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:72
+  [1m[36mLocation Load (0.5ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 ORDER BY "locations"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:12
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:14
+  [1m[36mStock Load (0.7ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."location_id" = $1 LIMIT $2[0m  [["location_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:16
+  [1m[36mItem Load (1.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."stock_id" = $1[0m  [["stock_id", 1]]
+  ↳ app/controllers/locations_controller.rb:18
+Completed 200 OK in 30ms (Views: 4.4ms | ActiveRecord: 17.0ms)
+
+
+Started GET "/locationprofile/1" for ::1 at 2021-03-23 23:15:47 +1300
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mLocation Load (1.8ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:72
+  [1m[36mLocation Load (7.2ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 ORDER BY "locations"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:12
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:14
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."location_id" = $1 LIMIT $2[0m  [["location_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:16
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."stock_id" = $1[0m  [["stock_id", 1]]
+  ↳ app/controllers/locations_controller.rb:18
+Completed 200 OK in 20ms (Views: 3.1ms | ActiveRecord: 9.9ms)
+
+
+Started GET "/locationprofile/1" for ::1 at 2021-03-23 23:16:25 +1300
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mLocation Load (0.3ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:72
+  [1m[36mLocation Load (0.6ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 ORDER BY "locations"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:12
+  [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:14
+  [1m[36mStock Load (0.5ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."location_id" = $1 LIMIT $2[0m  [["location_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:16
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."stock_id" = $1[0m  [["stock_id", 1]]
+  ↳ app/controllers/locations_controller.rb:18
+Completed 200 OK in 16ms (Views: 5.2ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/companyprofile/2" for ::1 at 2021-03-23 23:16:37 +1300
+Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:68
+  [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 ORDER BY "companies"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:11
+  [1m[36mLocation Load (0.4ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."company_id" = $1[0m  [["company_id", 2]]
+  ↳ app/controllers/companies_controller.rb:16
+Completed 200 OK in 10ms (Views: 4.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/companyprofile/2" for ::1 at 2021-03-23 23:16:39 +1300
+Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCompany Load (6.2ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:68
+  [1m[36mCompany Load (7.2ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 ORDER BY "companies"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:11
+  [1m[36mLocation Load (0.5ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."company_id" = $1[0m  [["company_id", 2]]
+  ↳ app/controllers/companies_controller.rb:16
+Completed 200 OK in 29ms (Views: 4.0ms | ActiveRecord: 13.9ms)
+
+
+Started GET "/companyprofile/2" for ::1 at 2021-03-23 23:16:48 +1300
+Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCompany Load (1.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:68
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 ORDER BY "companies"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:11
+  [1m[36mLocation Load (0.5ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."company_id" = $1[0m  [["company_id", 2]]
+  ↳ app/controllers/companies_controller.rb:16
+Completed 200 OK in 11ms (Views: 4.6ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/locationprofile/1" for ::1 at 2021-03-23 23:17:13 +1300
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mLocation Load (0.3ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:72
+  [1m[36mLocation Load (0.3ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 ORDER BY "locations"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:12
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:14
+  [1m[36mStock Load (0.3ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."location_id" = $1 LIMIT $2[0m  [["location_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:16
+  [1m[36mItem Load (2.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."stock_id" = $1[0m  [["stock_id", 1]]
+  ↳ app/controllers/locations_controller.rb:18
+Completed 200 OK in 14ms (Views: 4.1ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/locationprofile/1" for ::1 at 2021-03-23 23:17:37 +1300
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mLocation Load (0.8ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:72
+  [1m[36mLocation Load (0.7ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 ORDER BY "locations"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:12
+  [1m[36mCompany Load (1.2ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:14
+  [1m[36mStock Load (0.6ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."location_id" = $1 LIMIT $2[0m  [["location_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:16
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."stock_id" = $1[0m  [["stock_id", 1]]
+  ↳ app/controllers/locations_controller.rb:18
+Completed 200 OK in 17ms (Views: 4.3ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/locationprofile/1" for ::1 at 2021-03-23 23:18:33 +1300
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mLocation Load (0.9ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:72
+  [1m[36mLocation Load (0.4ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 ORDER BY "locations"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:12
+  [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:14
+  [1m[36mStock Load (0.4ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."location_id" = $1 LIMIT $2[0m  [["location_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:16
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."stock_id" = $1[0m  [["stock_id", 1]]
+  ↳ app/controllers/locations_controller.rb:18
+Completed 200 OK in 39ms (Views: 9.6ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/locationprofile/1" for ::1 at 2021-03-23 23:18:42 +1300
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mLocation Load (0.5ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:72
+  [1m[36mLocation Load (0.4ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 ORDER BY "locations"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:12
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:14
+  [1m[36mStock Load (0.4ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."location_id" = $1 LIMIT $2[0m  [["location_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:16
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."stock_id" = $1[0m  [["stock_id", 1]]
+  ↳ app/controllers/locations_controller.rb:18
+Completed 200 OK in 14ms (Views: 3.5ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/locationprofile/1" for ::1 at 2021-03-23 23:18:50 +1300
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mLocation Load (0.4ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:72
+  [1m[36mLocation Load (0.6ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 ORDER BY "locations"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:12
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:14
+  [1m[36mStock Load (0.4ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."location_id" = $1 LIMIT $2[0m  [["location_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:16
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."stock_id" = $1[0m  [["stock_id", 1]]
+  ↳ app/controllers/locations_controller.rb:18
+Completed 200 OK in 17ms (Views: 3.4ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/locationprofile/1" for ::1 at 2021-03-23 23:19:08 +1300
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mLocation Load (1.0ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:72
+  [1m[36mLocation Load (0.6ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 ORDER BY "locations"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:12
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:14
+  [1m[36mStock Load (0.4ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."location_id" = $1 LIMIT $2[0m  [["location_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:16
+  [1m[36mItem Load (0.7ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."stock_id" = $1[0m  [["stock_id", 1]]
+  ↳ app/controllers/locations_controller.rb:18
+Completed 200 OK in 20ms (Views: 5.8ms | ActiveRecord: 3.1ms)
+
+
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(960148978086182850)[0m
+  ↳ bin/rails:4
+  [1m[35m (3.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+Migrating to AddLastSupplierToItem (20210324133044)
+  [1m[35m (3.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[35m (15.2ms)[0m  [1m[35mALTER TABLE "items" ADD "lastSupplier" bigint[0m
+  ↳ db/migrate/20210324133044_add_last_supplier_to_item.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (2.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210324133044"]]
+  ↳ bin/rails:4
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to AddAutoRestockToItem (20210324133117)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[35m (6.7ms)[0m  [1m[35mALTER TABLE "items" ADD "autoRestock" boolean[0m
+  ↳ db/migrate/20210324133117_add_auto_restock_to_item.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210324133117"]]
+  ↳ bin/rails:4
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::InternalMetadata Load (6.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:4
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(960148978086182850)[0m
+  ↳ bin/rails:4
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[36mCompany Load (4.9ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:8
+  [1m[36mLocation Destroy (45.3ms)[0m  [1m[31mDELETE FROM "locations" WHERE "locations"."company_id" = $1[0m  [["company_id", 2]]
+  ↳ db/seeds.rb:8
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[36mCompany Load (1.6ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:8
+  [1m[36mLocation Destroy (9.6ms)[0m  [1m[31mDELETE FROM "locations" WHERE "locations"."company_id" = $1[0m  [["company_id", 2]]
+  ↳ db/seeds.rb:8
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[36mCompany Load (1.8ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:8
+  [1m[36mLocation Load (2.3ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."company_id" = $1[0m  [["company_id", 2]]
+  ↳ db/seeds.rb:8
+  [1m[36mStock Load (2.5ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."location_id" = $1 LIMIT $2[0m  [["location_id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mItem Load (4.9ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."stock_id" = $1[0m  [["stock_id", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mItem Destroy (1.0ms)[0m  [1m[31mDELETE FROM "items" WHERE "items"."id" = $1[0m  [["id", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mStock Destroy (1.9ms)[0m  [1m[31mDELETE FROM "stocks" WHERE "stocks"."id" = $1[0m  [["id", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mLocation Destroy (0.8ms)[0m  [1m[31mDELETE FROM "locations" WHERE "locations"."id" = $1[0m  [["id", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mCompany Destroy (3.7ms)[0m  [1m[31mDELETE FROM "companies" WHERE "companies"."id" = $1[0m  [["id", 2]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mCompany Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."email" = $1 LIMIT $2[0m  [["email", "test@test.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:9
+  [1m[36mCompany Create (5.9ms)[0m  [1m[32mINSERT INTO "companies" ("email", "password_digest", "address", "created_at", "updated_at", "name", "phone") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email", "test@test.com"], ["password_digest", "$2a$12$rV7dVMJRLDrA1bPIOxQR2uNThKPuhCfbynXKNaqb8qhPY8I/Wn3di"], ["address", "testdress"], ["created_at", "2021-03-24 13:45:40.270148"], ["updated_at", "2021-03-24 13:45:40.270148"], ["name", "TestCompany"], ["phone", "+64109238109238"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mCompany Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."email" = $1 LIMIT $2[0m  [["email", "test2@test2.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mCompany Create (0.4ms)[0m  [1m[32mINSERT INTO "companies" ("email", "password_digest", "address", "created_at", "updated_at", "name", "phone") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email", "test2@test2.com"], ["password_digest", "$2a$12$i5ZHxO.wvd6PAVJaOgcWe.0mKW16AYMd2erhDlpc0WSlD6M.DnHU6"], ["address", "testdress2"], ["created_at", "2021-03-24 13:45:40.584134"], ["updated_at", "2021-03-24 13:45:40.584134"], ["name", "TestCompany2"], ["phone", "+6113523524"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[36mLocation Load (0.5ms)[0m  [1m[34mSELECT "locations".* FROM "locations"[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:14
+  [1m[36mStock Load (0.3ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks"[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:18
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ db/seeds.rb:19
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:24
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:24
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:28
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:28
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:32
+  [1m[36mLocation Create (1.4ms)[0m  [1m[32mINSERT INTO "locations" ("address", "phone", "manager", "company_id", "created_at", "updated_at", "is_supplier") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["address", "testdress"], ["phone", "52958452123401"], ["manager", "Tester Guy"], ["company_id", 3], ["created_at", "2021-03-24 13:45:40.652636"], ["updated_at", "2021-03-24 13:45:40.652636"], ["is_supplier", false]]
+  ↳ db/seeds.rb:32
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:32
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:33
+  [1m[36mLocation Create (0.6ms)[0m  [1m[32mINSERT INTO "locations" ("address", "phone", "manager", "company_id", "created_at", "updated_at", "is_supplier") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["address", "testsupplydress"], ["phone", "52958452123401"], ["manager", "Tester supplier Guy"], ["company_id", 3], ["created_at", "2021-03-24 13:45:40.656266"], ["updated_at", "2021-03-24 13:45:40.656266"], ["is_supplier", true]]
+  ↳ db/seeds.rb:33
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:33
+  [1m[36mStock Load (0.4ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."location_id" = $1 LIMIT $2[0m  [["location_id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:34
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:34
+  [1m[36mStock Create (1.6ms)[0m  [1m[32mINSERT INTO "stocks" ("location_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location_id", 2], ["created_at", "2021-03-24 13:45:40.661294"], ["updated_at", "2021-03-24 13:45:40.661294"]]
+  ↳ db/seeds.rb:34
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:34
+  [1m[36mStock Load (0.3ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."location_id" = $1 LIMIT $2[0m  [["location_id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:35
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:35
+  [1m[36mStock Create (1.9ms)[0m  [1m[32mINSERT INTO "stocks" ("location_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location_id", 3], ["created_at", "2021-03-24 13:45:40.665916"], ["updated_at", "2021-03-24 13:45:40.665916"]]
+  ↳ db/seeds.rb:35
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:35
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:36
+  [1m[36mItem Create (1.6ms)[0m  [1m[32mINSERT INTO "items" ("amount", "name", "restock", "stock_id", "created_at", "updated_at", "lastSupplier", "autoRestock") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["amount", 1000], ["name", "Iron"], ["restock", 100], ["stock_id", 2], ["created_at", "2021-03-24 13:45:40.670445"], ["updated_at", "2021-03-24 13:45:40.670445"], ["lastSupplier", 3], ["autoRestock", false]]
+  ↳ db/seeds.rb:36
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:36
+  [1m[35m (22.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[36mCompany Load (4.5ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:8
+  [1m[36mLocation Load (2.9ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."company_id" = $1[0m  [["company_id", 3]]
+  ↳ db/seeds.rb:8
+  [1m[36mStock Load (1.8ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."location_id" = $1 LIMIT $2[0m  [["location_id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mItem Load (1.7ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."stock_id" = $1[0m  [["stock_id", 2]]
+  ↳ db/seeds.rb:8
+  [1m[36mItem Destroy (1.4ms)[0m  [1m[31mDELETE FROM "items" WHERE "items"."id" = $1[0m  [["id", 3]]
+  ↳ db/seeds.rb:8
+  [1m[36mStock Destroy (1.4ms)[0m  [1m[31mDELETE FROM "stocks" WHERE "stocks"."id" = $1[0m  [["id", 2]]
+  ↳ db/seeds.rb:8
+  [1m[36mLocation Destroy (0.8ms)[0m  [1m[31mDELETE FROM "locations" WHERE "locations"."id" = $1[0m  [["id", 2]]
+  ↳ db/seeds.rb:8
+  [1m[36mStock Load (0.4ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."location_id" = $1 LIMIT $2[0m  [["location_id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."stock_id" = $1[0m  [["stock_id", 3]]
+  ↳ db/seeds.rb:8
+  [1m[36mStock Destroy (1.1ms)[0m  [1m[31mDELETE FROM "stocks" WHERE "stocks"."id" = $1[0m  [["id", 3]]
+  ↳ db/seeds.rb:8
+  [1m[36mLocation Destroy (0.8ms)[0m  [1m[31mDELETE FROM "locations" WHERE "locations"."id" = $1[0m  [["id", 3]]
+  ↳ db/seeds.rb:8
+  [1m[36mCompany Destroy (0.7ms)[0m  [1m[31mDELETE FROM "companies" WHERE "companies"."id" = $1[0m  [["id", 3]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:8
+  [1m[36mLocation Load (0.3ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."company_id" = $1[0m  [["company_id", 4]]
+  ↳ db/seeds.rb:8
+  [1m[36mCompany Destroy (0.6ms)[0m  [1m[31mDELETE FROM "companies" WHERE "companies"."id" = $1[0m  [["id", 4]]
+  ↳ db/seeds.rb:8
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mCompany Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."email" = $1 LIMIT $2[0m  [["email", "test@test.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:9
+  [1m[36mCompany Create (0.9ms)[0m  [1m[32mINSERT INTO "companies" ("email", "password_digest", "address", "created_at", "updated_at", "name", "phone") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email", "test@test.com"], ["password_digest", "$2a$12$/6Q0afZSPXmQCOYN2WJXU.igxY4zix.x0RHXj.iAHI5Nf6f3QCYZe"], ["address", "testdress"], ["created_at", "2021-03-24 13:46:16.574835"], ["updated_at", "2021-03-24 13:46:16.574835"], ["name", "TestCompany"], ["phone", "+64109238109238"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mCompany Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."email" = $1 LIMIT $2[0m  [["email", "test2@test2.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mCompany Create (1.0ms)[0m  [1m[32mINSERT INTO "companies" ("email", "password_digest", "address", "created_at", "updated_at", "name", "phone") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email", "test2@test2.com"], ["password_digest", "$2a$12$r00s848jkN1CznwgJRHGkuUsHZXA7XAoS29nFMJgusBsnsDmzPe/i"], ["address", "testdress2"], ["created_at", "2021-03-24 13:46:16.902913"], ["updated_at", "2021-03-24 13:46:16.902913"], ["name", "TestCompany2"], ["phone", "+6113523524"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[36mLocation Load (0.4ms)[0m  [1m[34mSELECT "locations".* FROM "locations"[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:14
+  [1m[36mStock Load (0.3ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks"[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:18
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ db/seeds.rb:19
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:24
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:24
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:28
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:28
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:32
+  [1m[36mLocation Create (0.9ms)[0m  [1m[32mINSERT INTO "locations" ("address", "phone", "manager", "company_id", "created_at", "updated_at", "is_supplier") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["address", "testdress"], ["phone", "52958452123401"], ["manager", "Tester Guy"], ["company_id", 5], ["created_at", "2021-03-24 13:46:16.958396"], ["updated_at", "2021-03-24 13:46:16.958396"], ["is_supplier", false]]
+  ↳ db/seeds.rb:32
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:32
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:33
+  [1m[36mLocation Create (0.6ms)[0m  [1m[32mINSERT INTO "locations" ("address", "phone", "manager", "company_id", "created_at", "updated_at", "is_supplier") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["address", "testsupplydress"], ["phone", "52958452123401"], ["manager", "Tester supplier Guy"], ["company_id", 5], ["created_at", "2021-03-24 13:46:16.965099"], ["updated_at", "2021-03-24 13:46:16.965099"], ["is_supplier", true]]
+  ↳ db/seeds.rb:33
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:33
+  [1m[36mStock Load (0.4ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."location_id" = $1 LIMIT $2[0m  [["location_id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:34
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:34
+  [1m[36mStock Create (0.7ms)[0m  [1m[32mINSERT INTO "stocks" ("location_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location_id", 4], ["created_at", "2021-03-24 13:46:16.969879"], ["updated_at", "2021-03-24 13:46:16.969879"]]
+  ↳ db/seeds.rb:34
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:34
+  [1m[36mStock Load (0.4ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."location_id" = $1 LIMIT $2[0m  [["location_id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:35
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:35
+  [1m[36mStock Create (0.6ms)[0m  [1m[32mINSERT INTO "stocks" ("location_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location_id", 5], ["created_at", "2021-03-24 13:46:16.974656"], ["updated_at", "2021-03-24 13:46:16.974656"]]
+  ↳ db/seeds.rb:35
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:35
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:36
+  [1m[36mItem Create (0.7ms)[0m  [1m[32mINSERT INTO "items" ("amount", "name", "restock", "stock_id", "created_at", "updated_at", "lastSupplier", "autoRestock") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["amount", 1000], ["name", "Iron"], ["restock", 100], ["stock_id", 4], ["created_at", "2021-03-24 13:46:16.978329"], ["updated_at", "2021-03-24 13:46:16.978329"], ["lastSupplier", 3], ["autoRestock", false]]
+  ↳ db/seeds.rb:36
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:36
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:36
+  [1m[36mItem Create (0.9ms)[0m  [1m[32mINSERT INTO "items" ("amount", "name", "restock", "stock_id", "created_at", "updated_at", "lastSupplier", "autoRestock") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["amount", 2000], ["name", "Bronze"], ["restock", 200], ["stock_id", 4], ["created_at", "2021-03-24 13:46:16.981733"], ["updated_at", "2021-03-24 13:46:16.981733"], ["lastSupplier", 3], ["autoRestock", true]]
+  ↳ db/seeds.rb:36
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:36
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:36
+  [1m[36mItem Create (0.8ms)[0m  [1m[32mINSERT INTO "items" ("amount", "name", "restock", "stock_id", "created_at", "updated_at", "lastSupplier", "autoRestock") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["amount", 1500], ["name", "Gold"], ["restock", 300], ["stock_id", 4], ["created_at", "2021-03-24 13:46:16.985380"], ["updated_at", "2021-03-24 13:46:16.985380"], ["lastSupplier", 3], ["autoRestock", false]]
+  ↳ db/seeds.rb:36
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:36
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:36
+  [1m[36mItem Create (0.7ms)[0m  [1m[32mINSERT INTO "items" ("amount", "name", "restock", "stock_id", "created_at", "updated_at", "lastSupplier", "autoRestock") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["amount", 2500], ["name", "Silver"], ["restock", 400], ["stock_id", 4], ["created_at", "2021-03-24 13:46:16.988880"], ["updated_at", "2021-03-24 13:46:16.988880"], ["lastSupplier", 3], ["autoRestock", true]]
+  ↳ db/seeds.rb:36
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:36
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:37
+  [1m[36mItem Create (2.3ms)[0m  [1m[32mINSERT INTO "items" ("amount", "name", "restock", "stock_id", "created_at", "updated_at", "lastSupplier", "autoRestock") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["amount", 3000], ["name", "Copper"], ["restock", 500], ["stock_id", 5], ["created_at", "2021-03-24 13:46:16.992492"], ["updated_at", "2021-03-24 13:46:16.992492"], ["lastSupplier", 3], ["autoRestock", false]]
+  ↳ db/seeds.rb:37
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:37
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:37
+  [1m[36mItem Create (0.6ms)[0m  [1m[32mINSERT INTO "items" ("amount", "name", "restock", "stock_id", "created_at", "updated_at", "lastSupplier", "autoRestock") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["amount", 3500], ["name", "Tin"], ["restock", 600], ["stock_id", 5], ["created_at", "2021-03-24 13:46:16.997753"], ["updated_at", "2021-03-24 13:46:16.997753"], ["lastSupplier", 3], ["autoRestock", true]]
+  ↳ db/seeds.rb:37
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:37
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:37
+  [1m[36mItem Create (0.5ms)[0m  [1m[32mINSERT INTO "items" ("amount", "name", "restock", "stock_id", "created_at", "updated_at", "lastSupplier", "autoRestock") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["amount", 500], ["name", "Aluminium"], ["restock", 0], ["stock_id", 5], ["created_at", "2021-03-24 13:46:17.000803"], ["updated_at", "2021-03-24 13:46:17.000803"], ["lastSupplier", 3], ["autoRestock", false]]
+  ↳ db/seeds.rb:37
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:37
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:38
+  [1m[36mLocation Create (0.6ms)[0m  [1m[32mINSERT INTO "locations" ("address", "phone", "manager", "company_id", "created_at", "updated_at", "is_supplier") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["address", "testdress2"], ["phone", "12903845124"], ["manager", "Tester Guy2"], ["company_id", 6], ["created_at", "2021-03-24 13:46:17.003827"], ["updated_at", "2021-03-24 13:46:17.003827"], ["is_supplier", false]]
+  ↳ db/seeds.rb:38
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:38
+  [1m[36mStock Load (0.3ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."location_id" = $1 LIMIT $2[0m  [["location_id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:39
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:39
+  [1m[36mStock Create (1.0ms)[0m  [1m[32mINSERT INTO "stocks" ("location_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location_id", 6], ["created_at", "2021-03-24 13:46:17.008330"], ["updated_at", "2021-03-24 13:46:17.008330"]]
+  ↳ db/seeds.rb:39
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:39
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:40
+  [1m[36mItem Create (0.7ms)[0m  [1m[32mINSERT INTO "items" ("amount", "name", "restock", "stock_id", "created_at", "updated_at", "lastSupplier", "autoRestock") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["amount", 3000], ["name", "Copper"], ["restock", 500], ["stock_id", 6], ["created_at", "2021-03-24 13:46:17.012295"], ["updated_at", "2021-03-24 13:46:17.012295"], ["lastSupplier", 3], ["autoRestock", false]]
+  ↳ db/seeds.rb:40
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:40
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:40
+  [1m[36mItem Create (5.4ms)[0m  [1m[32mINSERT INTO "items" ("amount", "name", "restock", "stock_id", "created_at", "updated_at", "lastSupplier", "autoRestock") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["amount", 3500], ["name", "Tin"], ["restock", 600], ["stock_id", 6], ["created_at", "2021-03-24 13:46:17.016106"], ["updated_at", "2021-03-24 13:46:17.016106"], ["lastSupplier", 3], ["autoRestock", true]]
+  ↳ db/seeds.rb:40
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:40
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[36mCompany Load (1.5ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:8
+  [1m[36mLocation Load (5.7ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."company_id" = $1[0m  [["company_id", 5]]
+  ↳ db/seeds.rb:8
+  [1m[36mStock Load (1.8ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."location_id" = $1 LIMIT $2[0m  [["location_id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mItem Load (1.9ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."stock_id" = $1[0m  [["stock_id", 4]]
+  ↳ db/seeds.rb:8
+  [1m[36mItem Destroy (0.6ms)[0m  [1m[31mDELETE FROM "items" WHERE "items"."id" = $1[0m  [["id", 4]]
+  ↳ db/seeds.rb:8
+  [1m[36mItem Destroy (0.4ms)[0m  [1m[31mDELETE FROM "items" WHERE "items"."id" = $1[0m  [["id", 5]]
+  ↳ db/seeds.rb:8
+  [1m[36mItem Destroy (0.4ms)[0m  [1m[31mDELETE FROM "items" WHERE "items"."id" = $1[0m  [["id", 6]]
+  ↳ db/seeds.rb:8
+  [1m[36mItem Destroy (0.4ms)[0m  [1m[31mDELETE FROM "items" WHERE "items"."id" = $1[0m  [["id", 7]]
+  ↳ db/seeds.rb:8
+  [1m[36mStock Destroy (0.9ms)[0m  [1m[31mDELETE FROM "stocks" WHERE "stocks"."id" = $1[0m  [["id", 4]]
+  ↳ db/seeds.rb:8
+  [1m[36mLocation Destroy (0.9ms)[0m  [1m[31mDELETE FROM "locations" WHERE "locations"."id" = $1[0m  [["id", 4]]
+  ↳ db/seeds.rb:8
+  [1m[36mStock Load (0.4ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."location_id" = $1 LIMIT $2[0m  [["location_id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."stock_id" = $1[0m  [["stock_id", 5]]
+  ↳ db/seeds.rb:8
+  [1m[36mItem Destroy (0.5ms)[0m  [1m[31mDELETE FROM "items" WHERE "items"."id" = $1[0m  [["id", 8]]
+  ↳ db/seeds.rb:8
+  [1m[36mItem Destroy (0.4ms)[0m  [1m[31mDELETE FROM "items" WHERE "items"."id" = $1[0m  [["id", 9]]
+  ↳ db/seeds.rb:8
+  [1m[36mItem Destroy (0.4ms)[0m  [1m[31mDELETE FROM "items" WHERE "items"."id" = $1[0m  [["id", 10]]
+  ↳ db/seeds.rb:8
+  [1m[36mStock Destroy (0.5ms)[0m  [1m[31mDELETE FROM "stocks" WHERE "stocks"."id" = $1[0m  [["id", 5]]
+  ↳ db/seeds.rb:8
+  [1m[36mLocation Destroy (0.6ms)[0m  [1m[31mDELETE FROM "locations" WHERE "locations"."id" = $1[0m  [["id", 5]]
+  ↳ db/seeds.rb:8
+  [1m[36mCompany Destroy (0.7ms)[0m  [1m[31mDELETE FROM "companies" WHERE "companies"."id" = $1[0m  [["id", 5]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:8
+  [1m[36mLocation Load (0.4ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."company_id" = $1[0m  [["company_id", 6]]
+  ↳ db/seeds.rb:8
+  [1m[36mStock Load (0.4ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."location_id" = $1 LIMIT $2[0m  [["location_id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."stock_id" = $1[0m  [["stock_id", 6]]
+  ↳ db/seeds.rb:8
+  [1m[36mItem Destroy (0.4ms)[0m  [1m[31mDELETE FROM "items" WHERE "items"."id" = $1[0m  [["id", 11]]
+  ↳ db/seeds.rb:8
+  [1m[36mItem Destroy (0.8ms)[0m  [1m[31mDELETE FROM "items" WHERE "items"."id" = $1[0m  [["id", 12]]
+  ↳ db/seeds.rb:8
+  [1m[36mStock Destroy (1.8ms)[0m  [1m[31mDELETE FROM "stocks" WHERE "stocks"."id" = $1[0m  [["id", 6]]
+  ↳ db/seeds.rb:8
+  [1m[36mLocation Destroy (0.6ms)[0m  [1m[31mDELETE FROM "locations" WHERE "locations"."id" = $1[0m  [["id", 6]]
+  ↳ db/seeds.rb:8
+  [1m[36mCompany Destroy (0.6ms)[0m  [1m[31mDELETE FROM "companies" WHERE "companies"."id" = $1[0m  [["id", 6]]
+  ↳ db/seeds.rb:8
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (1.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mCompany Exists (3.6ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."email" = $1 LIMIT $2[0m  [["email", "test@test.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:9
+  [1m[36mCompany Create (0.7ms)[0m  [1m[32mINSERT INTO "companies" ("email", "password_digest", "address", "created_at", "updated_at", "name", "phone") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email", "test@test.com"], ["password_digest", "$2a$12$lEinIdxfGdftg1f792gM8OWeqJhl0mfK5CynKY3kzJJYsIZ4Z.sdy"], ["address", "testdress"], ["created_at", "2021-03-24 13:47:12.165985"], ["updated_at", "2021-03-24 13:47:12.165985"], ["name", "TestCompany"], ["phone", "+64109238109238"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mCompany Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."email" = $1 LIMIT $2[0m  [["email", "test2@test2.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mCompany Create (0.5ms)[0m  [1m[32mINSERT INTO "companies" ("email", "password_digest", "address", "created_at", "updated_at", "name", "phone") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email", "test2@test2.com"], ["password_digest", "$2a$12$J3rQNVnwzDM0u6saUhbIhOoC0/McJ5Ru0XNzy9fA7sa90afEIbSP."], ["address", "testdress2"], ["created_at", "2021-03-24 13:47:12.461802"], ["updated_at", "2021-03-24 13:47:12.461802"], ["name", "TestCompany2"], ["phone", "+6113523524"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[36mLocation Load (0.3ms)[0m  [1m[34mSELECT "locations".* FROM "locations"[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:14
+  [1m[36mStock Load (0.3ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks"[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:18
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ db/seeds.rb:19
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:24
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:24
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:28
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:28
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:33
+  [1m[36mLocation Create (0.7ms)[0m  [1m[32mINSERT INTO "locations" ("address", "phone", "manager", "company_id", "created_at", "updated_at", "is_supplier") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["address", "testdress"], ["phone", "52958452123401"], ["manager", "Tester Guy"], ["company_id", 7], ["created_at", "2021-03-24 13:47:12.500991"], ["updated_at", "2021-03-24 13:47:12.500991"], ["is_supplier", false]]
+  ↳ db/seeds.rb:33
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:34
+  [1m[36mLocation Create (0.8ms)[0m  [1m[32mINSERT INTO "locations" ("address", "phone", "manager", "company_id", "created_at", "updated_at", "is_supplier") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["address", "testsupplydress"], ["phone", "52958452123401"], ["manager", "Tester supplier Guy"], ["company_id", 7], ["created_at", "2021-03-24 13:47:12.503974"], ["updated_at", "2021-03-24 13:47:12.503974"], ["is_supplier", true]]
+  ↳ db/seeds.rb:34
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:34
+  [1m[36mStock Load (0.3ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."location_id" = $1 LIMIT $2[0m  [["location_id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:35
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:35
+  [1m[36mStock Create (2.2ms)[0m  [1m[32mINSERT INTO "stocks" ("location_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location_id", 7], ["created_at", "2021-03-24 13:47:12.508134"], ["updated_at", "2021-03-24 13:47:12.508134"]]
+  ↳ db/seeds.rb:35
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:35
+  [1m[36mStock Load (0.7ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."location_id" = $1 LIMIT $2[0m  [["location_id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:36
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:36
+  [1m[36mStock Create (0.6ms)[0m  [1m[32mINSERT INTO "stocks" ("location_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location_id", 8], ["created_at", "2021-03-24 13:47:12.515507"], ["updated_at", "2021-03-24 13:47:12.515507"]]
+  ↳ db/seeds.rb:36
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:36
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:37
+  [1m[36mItem Create (0.7ms)[0m  [1m[32mINSERT INTO "items" ("amount", "name", "restock", "stock_id", "created_at", "updated_at", "lastSupplier", "autoRestock") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["amount", 1000], ["name", "Iron"], ["restock", 100], ["stock_id", 7], ["created_at", "2021-03-24 13:47:12.518537"], ["updated_at", "2021-03-24 13:47:12.518537"], ["lastSupplier", 3], ["autoRestock", false]]
+  ↳ db/seeds.rb:37
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:37
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:37
+  [1m[36mItem Create (0.7ms)[0m  [1m[32mINSERT INTO "items" ("amount", "name", "restock", "stock_id", "created_at", "updated_at", "lastSupplier", "autoRestock") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["amount", 10000], ["name", "Nickel"], ["restock", 1000], ["stock_id", 7], ["created_at", "2021-03-24 13:47:12.521407"], ["updated_at", "2021-03-24 13:47:12.521407"], ["lastSupplier", 3], ["autoRestock", false]]
+  ↳ db/seeds.rb:37
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:37
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:37
+  [1m[36mItem Create (0.5ms)[0m  [1m[32mINSERT INTO "items" ("amount", "name", "restock", "stock_id", "created_at", "updated_at", "lastSupplier", "autoRestock") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["amount", 2000], ["name", "Bronze"], ["restock", 200], ["stock_id", 7], ["created_at", "2021-03-24 13:47:12.524316"], ["updated_at", "2021-03-24 13:47:12.524316"], ["lastSupplier", 3], ["autoRestock", true]]
+  ↳ db/seeds.rb:37
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:37
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:37
+  [1m[36mItem Create (0.6ms)[0m  [1m[32mINSERT INTO "items" ("amount", "name", "restock", "stock_id", "created_at", "updated_at", "lastSupplier", "autoRestock") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["amount", 1500], ["name", "Gold"], ["restock", 300], ["stock_id", 7], ["created_at", "2021-03-24 13:47:12.527018"], ["updated_at", "2021-03-24 13:47:12.527018"], ["lastSupplier", 3], ["autoRestock", false]]
+  ↳ db/seeds.rb:37
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:37
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:37
+  [1m[36mItem Create (0.6ms)[0m  [1m[32mINSERT INTO "items" ("amount", "name", "restock", "stock_id", "created_at", "updated_at", "lastSupplier", "autoRestock") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["amount", 2500], ["name", "Silver"], ["restock", 400], ["stock_id", 7], ["created_at", "2021-03-24 13:47:12.530216"], ["updated_at", "2021-03-24 13:47:12.530216"], ["lastSupplier", 3], ["autoRestock", true]]
+  ↳ db/seeds.rb:37
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:37
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:38
+  [1m[36mItem Create (0.6ms)[0m  [1m[32mINSERT INTO "items" ("amount", "name", "restock", "stock_id", "created_at", "updated_at", "lastSupplier", "autoRestock") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["amount", 3000], ["name", "Copper"], ["restock", 500], ["stock_id", 8], ["created_at", "2021-03-24 13:47:12.533049"], ["updated_at", "2021-03-24 13:47:12.533049"], ["lastSupplier", 3], ["autoRestock", false]]
+  ↳ db/seeds.rb:38
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:38
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:38
+  [1m[36mItem Create (0.5ms)[0m  [1m[32mINSERT INTO "items" ("amount", "name", "restock", "stock_id", "created_at", "updated_at", "lastSupplier", "autoRestock") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["amount", 3500], ["name", "Tin"], ["restock", 600], ["stock_id", 8], ["created_at", "2021-03-24 13:47:12.535794"], ["updated_at", "2021-03-24 13:47:12.535794"], ["lastSupplier", 3], ["autoRestock", true]]
+  ↳ db/seeds.rb:38
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:38
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:38
+  [1m[36mItem Create (0.6ms)[0m  [1m[32mINSERT INTO "items" ("amount", "name", "restock", "stock_id", "created_at", "updated_at", "lastSupplier", "autoRestock") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["amount", 500], ["name", "Aluminium"], ["restock", 0], ["stock_id", 8], ["created_at", "2021-03-24 13:47:12.538334"], ["updated_at", "2021-03-24 13:47:12.538334"], ["lastSupplier", 3], ["autoRestock", false]]
+  ↳ db/seeds.rb:38
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:38
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:39
+  [1m[36mLocation Create (0.6ms)[0m  [1m[32mINSERT INTO "locations" ("address", "phone", "manager", "company_id", "created_at", "updated_at", "is_supplier") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["address", "testdress2"], ["phone", "12903845124"], ["manager", "Tester Guy2"], ["company_id", 8], ["created_at", "2021-03-24 13:47:12.541566"], ["updated_at", "2021-03-24 13:47:12.541566"], ["is_supplier", false]]
+  ↳ db/seeds.rb:39
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:39
+  [1m[36mStock Load (1.4ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."location_id" = $1 LIMIT $2[0m  [["location_id", 9], ["LIMIT", 1]]
+  ↳ db/seeds.rb:40
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:40
+  [1m[36mStock Create (0.5ms)[0m  [1m[32mINSERT INTO "stocks" ("location_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location_id", 9], ["created_at", "2021-03-24 13:47:12.547585"], ["updated_at", "2021-03-24 13:47:12.547585"]]
+  ↳ db/seeds.rb:40
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:40
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:41
+  [1m[36mItem Create (0.5ms)[0m  [1m[32mINSERT INTO "items" ("amount", "name", "restock", "stock_id", "created_at", "updated_at", "lastSupplier", "autoRestock") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["amount", 3000], ["name", "Copper"], ["restock", 500], ["stock_id", 9], ["created_at", "2021-03-24 13:47:12.550489"], ["updated_at", "2021-03-24 13:47:12.550489"], ["lastSupplier", 3], ["autoRestock", false]]
+  ↳ db/seeds.rb:41
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:41
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:41
+  [1m[36mItem Create (0.5ms)[0m  [1m[32mINSERT INTO "items" ("amount", "name", "restock", "stock_id", "created_at", "updated_at", "lastSupplier", "autoRestock") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["amount", 3500], ["name", "Tin"], ["restock", 600], ["stock_id", 9], ["created_at", "2021-03-24 13:47:12.553112"], ["updated_at", "2021-03-24 13:47:12.553112"], ["lastSupplier", 3], ["autoRestock", true]]
+  ↳ db/seeds.rb:41
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:41

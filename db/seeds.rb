@@ -6,21 +6,27 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 Company.destroy_all
-ctest = Company.create(email:"test@test.com", password:"test", address:"testdress")
+ctest = Company.create(email:"test@test.com", password:"test", address:"testdress", name:"TestCompany", phone:"+64109238109238")
+ctest2 = Company.create(email:"test2@test2.com", password:"test", address:"testdress2", name:"TestCompany2", phone:"+6113523524")
 Location.destroy_all
 ltestsup = Location.create(address:"testsupplydress", phone:"52958452123401", manager:"Tester supplier Guy", is_supplier: true)
 ltest = Location.create(address:"testdress", phone:"52958452123401", manager:"Tester Guy", is_supplier: false)
+ltest2 = Location.create(address:"testdress2", phone:"12903845124", manager:"Tester Guy2", is_supplier: false)
 Stock.destroy_all
 stest = Stock.create
 stestsup = Stock.create
+stest2 = Stock.create
 Item.destroy_all
-itest = Item.create(amount:"1000", name:"Iron", restock:"100")
-itest2 = Item.create(amount:"2000", name:"Bronze", restock:"200")
-itest3 = Item.create(amount:"1500", name:"Gold", restock:"300")
-itest4 = Item.create(amount:"2500", name:"Silver", restock:"400")
-itest5 = Item.create(amount:"3000", name:"Copper", restock:"500")
-itest6 = Item.create(amount:"3500", name:"Tin", restock:"600")
-itestno = Item.create(amount:"500", name:"Aluminium", restock:"0")
+itest = Item.create(amount:"1000", name:"Iron", restock:"100", lastSupplier:3, autoRestock:false)
+itest1 = Item.create(amount:"10000", name:"Nickel", restock:"1000", lastSupplier:3, autoRestock:false)
+itest2 = Item.create(amount:"2000", name:"Bronze", restock:"200", lastSupplier:3, autoRestock:true)
+itest3 = Item.create(amount:"1500", name:"Gold", restock:"300", lastSupplier:3, autoRestock:false)
+itest4 = Item.create(amount:"2500", name:"Silver", restock:"400", lastSupplier:3, autoRestock:true)
+itest5 = Item.create(amount:"3000", name:"Copper", restock:"500", lastSupplier:3,autoRestock:false)
+itest6 = Item.create(amount:"3500", name:"Tin", restock:"600", lastSupplier:3, autoRestock:true)
+itestno = Item.create(amount:"500", name:"Aluminium", restock:"0", lastSupplier:3, autoRestock:false)
+itest52 = Item.create(amount:"3000", name:"Copper", restock:"500", lastSupplier:3,autoRestock:false)
+itest62 = Item.create(amount:"3500", name:"Tin", restock:"600", lastSupplier:3, autoRestock:true)
 
 
 
@@ -30,3 +36,6 @@ ltest.stock = stest
 ltestsup.stock = stestsup
 stest.items << itest << itest1 << itest2 << itest3 << itest4
 stestsup.items << itest5 << itest6 << itestno
+ctest2.locations << ltest2
+ltest2.stock = stest2
+stest2.items << itest52 << itest62
