@@ -48,10 +48,10 @@ class ItemsController < ApplicationController
 #Change all of it if I can post in all my data
 # trading supplies done
   def tradeItem
-    toLocation = Company.where(name: params[:recepCompany]).first.locations.where(address: [:recepLocationAddress])
-    location = current_user.locations.where(address: params[:locationAddress])
-    if(location.first.is_supplier === true)
-      updatedItem = location.first.stock.items.where(name: params[:name]).first
+    toLocation = Company.where(name: params[:recepCompany]).first.locations.where(address: [:recepLocationId])
+    location = current_user.locations.where(address: params[:locationId]).first
+    if(location.is_supplier === true)
+      updatedItem = location.stock.items.where(name: params[:name]).first
       toUpdatedItem = toLocation.first.stock.items.where(name: params[:name]).first
       if(toUpdatedItem.exists? && updatedItem.first.amount > params[:amount])
         updatedItem.update(amount: updatedItem.first.amount-params[:amount])
@@ -64,19 +64,19 @@ class ItemsController < ApplicationController
     end
   end
 
-# using and creating items yourself not done
-def changeItem
-  locationItem = current_user.locations.where(address: params[:recepLocationId]).first.stock.items.where(id: params[:id]).first
-  if(params[:amount] > 0) {
-    locationItem.update(amount: locationItem.amount+params[:amount])
-  } else {
-    locationItem.update(amount: locationItem.amount-params[:amount])
-    if(locationItem.amount < locationItem.restock)
-      # restock function
-      # probably send a post to another controller to do
+  # using and creating items yourself not done
+  def changeItem
+    locationItem = current_user.locations.where(address: params[:recepLocationId]).first.stock.items.where(id: params[:id]).first
+    if(params[:amount] > 0)
+      locationItem.update(amount: locationItem.amount+params[:amount])
+    else
+      locationItem.update(amount: locationItem.amount-params[:amount])
+      if(locationItem.amount < locationItem.restock)
+        # restock function
+        # probably send a post to another controller to do
+      end
     end
-  }
-end
+  end
 
 # deleting items
   def deleteItem
@@ -91,6 +91,6 @@ end
 
     # Only allow a list of trusted parameters through.
     def item_params
-      params.require(:item).permit(:amount, :name, :restock, :stock_id, :autoRestock, :lastSupplier, :recepLocationId, :recepCompanyId, :locationId)
+      params.require(:item).permit(:amount, :name, :restock, :stock_id, :autoRestock, :lastSupplier, :recepLocationId, :recepCompany, :locationId)
     end
 end
