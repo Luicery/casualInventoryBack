@@ -4699,3 +4699,799 @@ Migrating to AddLngToCompany (20210329134531)
   ↳ bin/rails:4
   [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ bin/rails:4
+  [1m[36mItem Load (9.7ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mStock Load (11.2ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mItem Create (47.0ms)[0m  [1m[32mINSERT INTO "items" ("amount", "name", "restock", "stock_id", "created_at", "updated_at", "lastSupplier", "autoRestock", "price") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["amount", 100], ["name", "ItemTesting"], ["restock", 50], ["stock_id", 9], ["created_at", "2021-04-02 12:11:52.921443"], ["updated_at", "2021-04-02 12:11:52.921443"], ["lastSupplier", 8], ["autoRestock", false], ["price", 20]]
+  [1m[35m (9.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mItem Destroy (2.6ms)[0m  [1m[31mDELETE FROM "items" WHERE "items"."id" = $1[0m  [["id", nil]]
+  [1m[36mItem Load (1.1ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  [1m[36mItem Load (0.7ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = $1[0m  [["id", 23]]
+  [1m[36mItem Load (1.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 ORDER BY "items"."id" ASC LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Destroy (3.6ms)[0m  [1m[31mDELETE FROM "items" WHERE "items"."id" = $1[0m  [["id", 23]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mItem Load (0.9ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Started GET "/companies" for ::1 at 2021-04-03 01:42:18 +1300
+  [1m[35m (6.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/wongivan/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+Processing by CompaniesController#index as HTML
+  [1m[36mCompany Load (5.2ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:7
+Completed 200 OK in 213ms (Views: 53.2ms | ActiveRecord: 149.4ms)
+
+
+Started GET "/locationprofile/7" for ::1 at 2021-04-03 01:42:21 +1300
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mLocation Load (13.7ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:72
+  [1m[36mLocation Load (0.5ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 ORDER BY "locations"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:12
+  [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:14
+  [1m[36mStock Load (1.6ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."location_id" = $1 LIMIT $2[0m  [["location_id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:16
+  [1m[36mItem Load (3.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."stock_id" = $1[0m  [["stock_id", 7]]
+  ↳ app/controllers/locations_controller.rb:18
+Completed 200 OK in 183ms (Views: 20.0ms | ActiveRecord: 45.1ms)
+
+
+Started GET "/locationprofile/7" for ::1 at 2021-04-03 01:42:36 +1300
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mLocation Load (0.5ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:72
+  [1m[36mLocation Load (0.5ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 ORDER BY "locations"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:12
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:14
+  [1m[36mStock Load (0.4ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."location_id" = $1 LIMIT $2[0m  [["location_id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:16
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."stock_id" = $1[0m  [["stock_id", 7]]
+  ↳ app/controllers/locations_controller.rb:18
+Completed 200 OK in 15ms (Views: 6.5ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/locationprofile/7" for ::1 at 2021-04-03 01:42:42 +1300
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mLocation Load (0.5ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:72
+  [1m[36mLocation Load (0.4ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 ORDER BY "locations"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:12
+  [1m[36mCompany Load (12.7ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:14
+  [1m[36mStock Load (0.5ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."location_id" = $1 LIMIT $2[0m  [["location_id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:16
+  [1m[36mItem Load (0.8ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."stock_id" = $1[0m  [["stock_id", 7]]
+  ↳ app/controllers/locations_controller.rb:18
+Completed 200 OK in 28ms (Views: 5.6ms | ActiveRecord: 15.0ms)
+
+
+Started GET "/locationprofile/7" for ::1 at 2021-04-03 01:42:51 +1300
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mLocation Load (0.9ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:72
+  [1m[36mLocation Load (0.5ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 ORDER BY "locations"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:12
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:14
+  [1m[36mStock Load (0.4ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."location_id" = $1 LIMIT $2[0m  [["location_id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:16
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."stock_id" = $1[0m  [["stock_id", 7]]
+  ↳ app/controllers/locations_controller.rb:18
+Completed 200 OK in 28ms (Views: 3.3ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/locationprofile/7" for ::1 at 2021-04-03 01:43:13 +1300
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mLocation Load (1.4ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:72
+  [1m[36mLocation Load (0.6ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 ORDER BY "locations"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:12
+  [1m[36mCompany Load (1.4ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:14
+  [1m[36mStock Load (0.4ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."location_id" = $1 LIMIT $2[0m  [["location_id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:16
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."stock_id" = $1[0m  [["stock_id", 7]]
+  ↳ app/controllers/locations_controller.rb:18
+Completed 200 OK in 28ms (Views: 7.9ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/locationprofile/7" for ::1 at 2021-04-03 01:43:15 +1300
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mLocation Load (0.6ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:72
+  [1m[36mLocation Load (0.7ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 ORDER BY "locations"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:12
+  [1m[36mCompany Load (0.6ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:14
+  [1m[36mStock Load (0.4ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."location_id" = $1 LIMIT $2[0m  [["location_id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:16
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."stock_id" = $1[0m  [["stock_id", 7]]
+  ↳ app/controllers/locations_controller.rb:18
+Completed 200 OK in 13ms (Views: 5.0ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/locationprofile/7" for ::1 at 2021-04-03 01:43:42 +1300
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mLocation Load (1.6ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:72
+  [1m[36mLocation Load (0.7ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 ORDER BY "locations"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:12
+  [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:14
+  [1m[36mStock Load (0.9ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."location_id" = $1 LIMIT $2[0m  [["location_id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:16
+  [1m[36mItem Load (0.7ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."stock_id" = $1[0m  [["stock_id", 7]]
+  ↳ app/controllers/locations_controller.rb:18
+Completed 200 OK in 26ms (Views: 10.3ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/locationprofile/7" for ::1 at 2021-04-03 01:43:54 +1300
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mLocation Load (0.5ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:72
+  [1m[36mLocation Load (0.4ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 ORDER BY "locations"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:12
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:14
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."location_id" = $1 LIMIT $2[0m  [["location_id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:16
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."stock_id" = $1[0m  [["stock_id", 7]]
+  ↳ app/controllers/locations_controller.rb:18
+Completed 200 OK in 14ms (Views: 4.3ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/locationprofile/7" for ::1 at 2021-04-03 01:44:22 +1300
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mLocation Load (0.6ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:72
+  [1m[36mLocation Load (0.4ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 ORDER BY "locations"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:12
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:14
+  [1m[36mStock Load (0.3ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."location_id" = $1 LIMIT $2[0m  [["location_id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:16
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."stock_id" = $1[0m  [["stock_id", 7]]
+  ↳ app/controllers/locations_controller.rb:18
+Completed 200 OK in 19ms (Views: 10.2ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/locationprofile/7" for ::1 at 2021-04-03 01:44:43 +1300
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mLocation Load (0.4ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:72
+  [1m[36mLocation Load (0.3ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 ORDER BY "locations"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:12
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:14
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."location_id" = $1 LIMIT $2[0m  [["location_id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:16
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."stock_id" = $1[0m  [["stock_id", 7]]
+  ↳ app/controllers/locations_controller.rb:18
+Completed 200 OK in 13ms (Views: 5.5ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/locationprofile/7" for ::1 at 2021-04-03 01:45:45 +1300
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mLocation Load (0.7ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:72
+  [1m[36mLocation Load (0.3ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 ORDER BY "locations"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:12
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:14
+  [1m[36mStock Load (0.3ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."location_id" = $1 LIMIT $2[0m  [["location_id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:16
+  [1m[36mItem Load (0.7ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."stock_id" = $1[0m  [["stock_id", 7]]
+  ↳ app/controllers/locations_controller.rb:18
+Completed 200 OK in 33ms (Views: 11.5ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/locationprofile/7" for ::1 at 2021-04-03 01:47:28 +1300
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mLocation Load (0.3ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:72
+  [1m[36mLocation Load (0.4ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 ORDER BY "locations"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:12
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:14
+  [1m[36mStock Load (0.3ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."location_id" = $1 LIMIT $2[0m  [["location_id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:16
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."stock_id" = $1[0m  [["stock_id", 7]]
+  ↳ app/controllers/locations_controller.rb:18
+Completed 200 OK in 174ms (Views: 22.0ms | ActiveRecord: 39.2ms)
+
+
+Started GET "/locationprofile/7" for ::1 at 2021-04-03 01:48:13 +1300
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mLocation Load (0.6ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:72
+  [1m[36mLocation Load (0.3ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 ORDER BY "locations"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:12
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:14
+  [1m[36mStock Load (0.3ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."location_id" = $1 LIMIT $2[0m  [["location_id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:16
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."stock_id" = $1[0m  [["stock_id", 7]]
+  ↳ app/controllers/locations_controller.rb:18
+Completed 200 OK in 71ms (Views: 33.6ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/locationprofile/7" for ::1 at 2021-04-03 01:49:05 +1300
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mLocation Load (1.4ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:72
+  [1m[36mLocation Load (0.8ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 ORDER BY "locations"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:12
+  [1m[36mCompany Load (0.6ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:14
+  [1m[36mStock Load (0.5ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."location_id" = $1 LIMIT $2[0m  [["location_id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:16
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."stock_id" = $1[0m  [["stock_id", 7]]
+  ↳ app/controllers/locations_controller.rb:18
+Completed 200 OK in 55ms (Views: 15.1ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/locationprofile/7" for ::1 at 2021-04-03 01:49:50 +1300
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mLocation Load (0.5ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:72
+  [1m[36mLocation Load (0.8ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 ORDER BY "locations"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:12
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:14
+  [1m[36mStock Load (4.8ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."location_id" = $1 LIMIT $2[0m  [["location_id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:16
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."stock_id" = $1[0m  [["stock_id", 7]]
+  ↳ app/controllers/locations_controller.rb:18
+Completed 200 OK in 25ms (Views: 7.8ms | ActiveRecord: 7.1ms)
+
+
+Started GET "/locationprofile/7" for ::1 at 2021-04-03 01:50:41 +1300
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mLocation Load (0.3ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:72
+  [1m[36mLocation Load (0.5ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 ORDER BY "locations"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:12
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:14
+  [1m[36mStock Load (0.3ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."location_id" = $1 LIMIT $2[0m  [["location_id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:16
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."stock_id" = $1[0m  [["stock_id", 7]]
+  ↳ app/controllers/locations_controller.rb:18
+Completed 200 OK in 12ms (Views: 4.7ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/tradeItem" for ::1 at 2021-04-03 01:50:49 +1300
+Processing by ItemsController#tradeItem as HTML
+  Parameters: {"item"=>{"recepCompany"=>"", "recepLocationId"=>"", "locationId"=>"7", "name"=>"Silver", "amount"=>""}, "headers"=>{"Authorization"=>"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MTY3NzQ5NTUsInN1YiI6N30.ZK4TPXMzur2RmTpICw_a4PYLsT6xolTMVPCbvehNH9g"}}
+HTTP Origin header (http://localhost:3001) didn't match request.base_url (http://localhost:3000)
+Completed 422 Unprocessable Entity in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+actionpack (5.2.4.5) lib/action_controller/metal/request_forgery_protection.rb:211:in `handle_unverified_request'
+actionpack (5.2.4.5) lib/action_controller/metal/request_forgery_protection.rb:243:in `handle_unverified_request'
+actionpack (5.2.4.5) lib/action_controller/metal/request_forgery_protection.rb:238:in `verify_authenticity_token'
+activesupport (5.2.4.5) lib/active_support/callbacks.rb:426:in `block in make_lambda'
+activesupport (5.2.4.5) lib/active_support/callbacks.rb:198:in `block (2 levels) in halting'
+actionpack (5.2.4.5) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.2.4.5) lib/active_support/callbacks.rb:199:in `block in halting'
+activesupport (5.2.4.5) lib/active_support/callbacks.rb:513:in `block in invoke_before'
+activesupport (5.2.4.5) lib/active_support/callbacks.rb:513:in `each'
+activesupport (5.2.4.5) lib/active_support/callbacks.rb:513:in `invoke_before'
+activesupport (5.2.4.5) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.2.4.5) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.4.5) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.4.5) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.4.5) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.4.5) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.4.5) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.4.5) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.4.5) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.4.5) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.4.5) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.4.5) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.4.5) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.4.5) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.4.5) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.4.5) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.4.5) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.4.5) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.4.5) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.4.5) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (5.2.4.5) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (5.2.4.5) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.4.5) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.4.5) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.5) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.5) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.5) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.5) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.5) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.5) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.5) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.5) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.5) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.5) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.5) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.5) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.5) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.5) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (5.2.4.5) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/locationprofile/7" for ::1 at 2021-04-03 01:53:08 +1300
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mLocation Load (1.0ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:72
+  [1m[36mLocation Load (0.4ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 ORDER BY "locations"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:12
+  [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:14
+  [1m[36mStock Load (0.4ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."location_id" = $1 LIMIT $2[0m  [["location_id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:16
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."stock_id" = $1[0m  [["stock_id", 7]]
+  ↳ app/controllers/locations_controller.rb:18
+Completed 200 OK in 318ms (Views: 30.2ms | ActiveRecord: 90.9ms)
+
+
+Started GET "/locationprofile/7" for ::1 at 2021-04-03 01:53:09 +1300
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mLocation Load (0.6ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:72
+  [1m[36mLocation Load (1.2ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 ORDER BY "locations"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:12
+  [1m[36mCompany Load (0.6ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:14
+  [1m[36mStock Load (0.4ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."location_id" = $1 LIMIT $2[0m  [["location_id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:16
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."stock_id" = $1[0m  [["stock_id", 7]]
+  ↳ app/controllers/locations_controller.rb:18
+Completed 200 OK in 17ms (Views: 5.0ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/locationprofile/7" for ::1 at 2021-04-03 01:53:09 +1300
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mLocation Load (0.5ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:72
+  [1m[36mLocation Load (0.4ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 ORDER BY "locations"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:12
+  [1m[36mCompany Load (9.0ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:14
+  [1m[36mStock Load (0.6ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."location_id" = $1 LIMIT $2[0m  [["location_id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:16
+  [1m[36mItem Load (1.8ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."stock_id" = $1[0m  [["stock_id", 7]]
+  ↳ app/controllers/locations_controller.rb:18
+Completed 200 OK in 26ms (Views: 6.8ms | ActiveRecord: 12.3ms)
+
+
+Started GET "/locationprofile/7" for ::1 at 2021-04-03 01:54:12 +1300
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mLocation Load (22.8ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:72
+  [1m[36mLocation Load (3.3ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 ORDER BY "locations"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:12
+  [1m[36mCompany Load (2.5ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:14
+  [1m[36mStock Load (0.5ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."location_id" = $1 LIMIT $2[0m  [["location_id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:16
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."stock_id" = $1[0m  [["stock_id", 7]]
+  ↳ app/controllers/locations_controller.rb:18
+Completed 200 OK in 110ms (Views: 23.3ms | ActiveRecord: 29.7ms)
+
+
+Started GET "/locationprofile/7" for ::1 at 2021-04-03 01:54:24 +1300
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mLocation Load (0.8ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:72
+  [1m[36mLocation Load (0.4ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 ORDER BY "locations"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:12
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:14
+  [1m[36mStock Load (0.6ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."location_id" = $1 LIMIT $2[0m  [["location_id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:16
+  [1m[36mItem Load (0.9ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."stock_id" = $1[0m  [["stock_id", 7]]
+  ↳ app/controllers/locations_controller.rb:18
+Completed 200 OK in 25ms (Views: 12.4ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/locationprofile/7" for ::1 at 2021-04-03 01:54:26 +1300
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mLocation Load (0.4ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:72
+  [1m[36mLocation Load (1.3ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 ORDER BY "locations"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:12
+  [1m[36mCompany Load (0.9ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:14
+  [1m[36mStock Load (1.2ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."location_id" = $1 LIMIT $2[0m  [["location_id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:16
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."stock_id" = $1[0m  [["stock_id", 7]]
+  ↳ app/controllers/locations_controller.rb:18
+Completed 200 OK in 25ms (Views: 7.5ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/locationprofile/7" for ::1 at 2021-04-03 01:54:54 +1300
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mLocation Load (0.5ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:72
+  [1m[36mLocation Load (0.5ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 ORDER BY "locations"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:12
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:14
+  [1m[36mStock Load (0.3ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."location_id" = $1 LIMIT $2[0m  [["location_id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:16
+  [1m[36mItem Load (1.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."stock_id" = $1[0m  [["stock_id", 7]]
+  ↳ app/controllers/locations_controller.rb:18
+Completed 200 OK in 20ms (Views: 8.8ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/locationprofile/7" for ::1 at 2021-04-03 01:54:55 +1300
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mLocation Load (0.5ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:72
+  [1m[36mLocation Load (0.4ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 ORDER BY "locations"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:12
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:14
+  [1m[36mStock Load (0.5ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."location_id" = $1 LIMIT $2[0m  [["location_id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:16
+  [1m[36mItem Load (1.6ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."stock_id" = $1[0m  [["stock_id", 7]]
+  ↳ app/controllers/locations_controller.rb:18
+Completed 200 OK in 21ms (Views: 7.9ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/locationprofile/7" for ::1 at 2021-04-03 01:55:16 +1300
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mLocation Load (15.3ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:72
+  [1m[36mLocation Load (0.5ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 ORDER BY "locations"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:12
+  [1m[36mCompany Load (1.6ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:14
+  [1m[36mStock Load (0.6ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."location_id" = $1 LIMIT $2[0m  [["location_id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:16
+  [1m[36mItem Load (1.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."stock_id" = $1[0m  [["stock_id", 7]]
+  ↳ app/controllers/locations_controller.rb:18
+Completed 200 OK in 84ms (Views: 23.7ms | ActiveRecord: 19.1ms)
+
+
+Started GET "/locationprofile/7" for ::1 at 2021-04-03 01:55:24 +1300
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mLocation Load (0.7ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:72
+  [1m[36mLocation Load (4.2ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 ORDER BY "locations"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:12
+  [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:14
+  [1m[36mStock Load (3.7ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."location_id" = $1 LIMIT $2[0m  [["location_id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:16
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."stock_id" = $1[0m  [["stock_id", 7]]
+  ↳ app/controllers/locations_controller.rb:18
+Completed 200 OK in 112ms (Views: 11.4ms | ActiveRecord: 9.5ms)
+
+
+Started GET "/locationprofile/7" for ::1 at 2021-04-03 01:55:31 +1300
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mLocation Load (0.4ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:72
+  [1m[36mLocation Load (0.4ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 ORDER BY "locations"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:12
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:14
+  [1m[36mStock Load (1.2ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."location_id" = $1 LIMIT $2[0m  [["location_id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:16
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."stock_id" = $1[0m  [["stock_id", 7]]
+  ↳ app/controllers/locations_controller.rb:18
+Completed 200 OK in 18ms (Views: 7.8ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/locationprofile/7" for ::1 at 2021-04-03 01:56:31 +1300
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mLocation Load (1.7ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:72
+  [1m[36mLocation Load (1.2ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 ORDER BY "locations"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:12
+  [1m[36mCompany Load (0.8ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:14
+  [1m[36mStock Load (0.6ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."location_id" = $1 LIMIT $2[0m  [["location_id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:16
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."stock_id" = $1[0m  [["stock_id", 7]]
+  ↳ app/controllers/locations_controller.rb:18
+Completed 200 OK in 78ms (Views: 18.2ms | ActiveRecord: 5.0ms)
+
+
+Started POST "/tradeItem" for ::1 at 2021-04-03 01:56:39 +1300
+Processing by ItemsController#tradeItem as HTML
+  Parameters: {"item"=>{"recepCompany"=>"asd", "recepLocationId"=>"", "locationId"=>"7", "name"=>"Nickel", "amount"=>""}, "headers"=>{"Authorization"=>"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MTY3NzQ5NTUsInN1YiI6N30.ZK4TPXMzur2RmTpICw_a4PYLsT6xolTMVPCbvehNH9g"}}
+HTTP Origin header (http://localhost:3001) didn't match request.base_url (http://localhost:3000)
+Completed 422 Unprocessable Entity in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+actionpack (5.2.4.5) lib/action_controller/metal/request_forgery_protection.rb:211:in `handle_unverified_request'
+actionpack (5.2.4.5) lib/action_controller/metal/request_forgery_protection.rb:243:in `handle_unverified_request'
+actionpack (5.2.4.5) lib/action_controller/metal/request_forgery_protection.rb:238:in `verify_authenticity_token'
+activesupport (5.2.4.5) lib/active_support/callbacks.rb:426:in `block in make_lambda'
+activesupport (5.2.4.5) lib/active_support/callbacks.rb:198:in `block (2 levels) in halting'
+actionpack (5.2.4.5) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.2.4.5) lib/active_support/callbacks.rb:199:in `block in halting'
+activesupport (5.2.4.5) lib/active_support/callbacks.rb:513:in `block in invoke_before'
+activesupport (5.2.4.5) lib/active_support/callbacks.rb:513:in `each'
+activesupport (5.2.4.5) lib/active_support/callbacks.rb:513:in `invoke_before'
+activesupport (5.2.4.5) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.2.4.5) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.4.5) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.4.5) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.4.5) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.4.5) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.4.5) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.4.5) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.4.5) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.4.5) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.4.5) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.4.5) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.4.5) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.4.5) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.4.5) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.4.5) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.4.5) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.4.5) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.4.5) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.4.5) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (5.2.4.5) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (5.2.4.5) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.4.5) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.4.5) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.5) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.5) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.5) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.5) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.5) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.5) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.5) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.5) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.5) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.5) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.5) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.5) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.5) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.5) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (5.2.4.5) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/tradeItem" for ::1 at 2021-04-03 01:56:42 +1300
+Processing by ItemsController#tradeItem as HTML
+  Parameters: {"item"=>{"recepCompany"=>"ASD", "recepLocationId"=>"", "locationId"=>"7", "name"=>"Nickel", "amount"=>""}, "headers"=>{"Authorization"=>"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MTY3NzQ5NTUsInN1YiI6N30.ZK4TPXMzur2RmTpICw_a4PYLsT6xolTMVPCbvehNH9g"}}
+HTTP Origin header (http://localhost:3001) didn't match request.base_url (http://localhost:3000)
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+actionpack (5.2.4.5) lib/action_controller/metal/request_forgery_protection.rb:211:in `handle_unverified_request'
+actionpack (5.2.4.5) lib/action_controller/metal/request_forgery_protection.rb:243:in `handle_unverified_request'
+actionpack (5.2.4.5) lib/action_controller/metal/request_forgery_protection.rb:238:in `verify_authenticity_token'
+activesupport (5.2.4.5) lib/active_support/callbacks.rb:426:in `block in make_lambda'
+activesupport (5.2.4.5) lib/active_support/callbacks.rb:198:in `block (2 levels) in halting'
+actionpack (5.2.4.5) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.2.4.5) lib/active_support/callbacks.rb:199:in `block in halting'
+activesupport (5.2.4.5) lib/active_support/callbacks.rb:513:in `block in invoke_before'
+activesupport (5.2.4.5) lib/active_support/callbacks.rb:513:in `each'
+activesupport (5.2.4.5) lib/active_support/callbacks.rb:513:in `invoke_before'
+activesupport (5.2.4.5) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.2.4.5) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.4.5) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.4.5) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.4.5) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.4.5) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.4.5) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.4.5) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.4.5) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.4.5) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.4.5) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.4.5) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.4.5) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.4.5) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.4.5) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.4.5) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.4.5) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.4.5) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.4.5) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.4.5) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (5.2.4.5) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (5.2.4.5) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.4.5) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.4.5) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.5) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.5) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.5) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.5) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.5) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.5) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.5) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.5) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.5) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.5) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.5) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.5) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.5) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.5) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (5.2.4.5) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/locationprofile/7" for ::1 at 2021-04-03 01:56:59 +1300
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mLocation Load (0.5ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:72
+  [1m[36mLocation Load (0.5ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 ORDER BY "locations"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:12
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:14
+  [1m[36mStock Load (3.2ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."location_id" = $1 LIMIT $2[0m  [["location_id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:16
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."stock_id" = $1[0m  [["stock_id", 7]]
+  ↳ app/controllers/locations_controller.rb:18
+Completed 200 OK in 18ms (Views: 5.3ms | ActiveRecord: 5.1ms)
+
+
+  [1m[36mCompany Load (2.0ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  [1m[36mCompany Load (1.0ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."address" = $1[0m  [["address", "Testdress2"]]
+  [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."address" = $1[0m  [["address", "testdress2"]]
+  [1m[36mCompany Load (1.7ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."address" = $1[0m  [["address", "LOWER(TESTDRESS2)"]]
+  [1m[36mCompany Load (0.9ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."address" = $1[0m  [["address", "LOWER(TESTDRESS2)"]]
+  [1m[36mCompany Load (0.8ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."address" = $1[0m  [["address", "testdress2"]]
+  [1m[36mCompany Load (5.6ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE (address LIKE 'TESTDRESS2')[0m
+  [1m[35m (4.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(960148978086182850)[0m
+  ↳ bin/rails:4
+  [1m[35m (3.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+Migrating to AddRestockAmountToItem (20210402132319)
+  [1m[35m (3.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[35m (66.1ms)[0m  [1m[35mALTER TABLE "items" ADD "restockAmount" integer[0m
+  ↳ db/migrate/20210402132319_add_restock_amount_to_item.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (7.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210402132319"]]
+  ↳ bin/rails:4
+  [1m[35m (3.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::InternalMetadata Load (4.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:4
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(960148978086182850)[0m
+  ↳ bin/rails:4
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[36mLocation Load (4.3ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."id" = $1[0m  [["id", 23]]
+  [1m[36mLocation Load (0.7ms)[0m  [1m[34mSELECT "locations".* FROM "locations"[0m
+  [1m[36mLocation Load (0.6ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."id" = $1[0m  [["id", 9]]
+  [1m[36mLocation Load (0.4ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 11]]
+  [1m[36mLocation Load (0.4ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 ORDER BY "locations"."id" ASC LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mLocation Load (0.7ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 ORDER BY "locations"."id" ASC LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mStock Load (3.1ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."location_id" = $1 LIMIT $2[0m  [["location_id", 9], ["LIMIT", 1]]
+  [1m[36mItem Load (1.8ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."stock_id" = $1[0m  [["stock_id", 9]]
+  [1m[36mItem Load (0.8ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  [1m[36mItem Load (0.7ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = $1[0m  [["id", 22]]
+  [1m[36mStock Load (1.1ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mLocation Load (1.5ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mCompany Load (2.0ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(960148978086182850)[0m
+  ↳ bin/rails:4
+  [1m[35m (3.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+Migrating to AddCashToCompany (20210402133402)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[35m (2.4ms)[0m  [1m[35mALTER TABLE "companies" ADD "cash" integer[0m
+  ↳ db/migrate/20210402133402_add_cash_to_company.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210402133402"]]
+  ↳ bin/rails:4
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::InternalMetadata Load (4.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:4
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(960148978086182850)[0m
+  ↳ bin/rails:4
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4

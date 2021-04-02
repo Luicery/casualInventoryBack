@@ -21,7 +21,8 @@ class ItemsController < ApplicationController
 
   # POST /items or /items.json
   def create
-    @item = Item.new(item_params)
+    @item = Item.create(name:name, price:price, amount:amount)
+    @item.location = Location.where(id:locationId)
     respond_to do |format|
       if @item.save
         format.html { redirect_to @item, notice: "Item was successfully created." }
@@ -48,8 +49,8 @@ class ItemsController < ApplicationController
 #Change all of it if I can post in all my data
 # trading supplies done
   def tradeItem
-    toLocation = Company.where(name: params[:recepCompany]).first.locations.where(address: [:recepLocationId])
-    location = current_user.locations.where(address: params[:locationId]).first
+    toLocation = Company.where(name: params[:recepCompany]).first.locations.where(address: [:recepLocation])
+    location = current_user.locations.where(id: params[:locationId]).first
     if(location.is_supplier === true)
       updatedItem = location.stock.items.where(name: params[:name]).first
       toUpdatedItem = toLocation.first.stock.items.where(name: params[:name]).first
@@ -72,8 +73,19 @@ class ItemsController < ApplicationController
     else
       locationItem.update(amount: locationItem.amount-params[:amount])
       if(locationItem.amount < locationItem.restock)
-        # restock function
-        # probably send a post to another controller to do
+        previousSupplierItem = Location.where(id:locationItem.lastSupplier).first.stock.items.where(name:locationItem.name).first
+        if(previousSupplierItem.amount > locationItem.restockAmount - locationItem.amount)
+          previousSupplierItem.amount - (locationItem.restockAmount - locationItem.amount)
+          locationItem.stock.location.company.cash - (previousSupplierItem.price * (locationItem.restockAmount - locationItem.amount))
+          locationItem.amount = locationItem.restockAmount
+        else
+          locationItem.amount = locationItem.amount + previousSupplierItem.amount
+          locationItem.stock.location.company.cash - (previousSupplierItem.price * previousSupplierItem.amount)
+          previousSupplierItem.amount = 0
+        end
+        if(previousSupplierItem.amount < previousSupplierItem.restock)
+          changeItem()
+        end
       end
     end
   end
@@ -91,6 +103,6 @@ class ItemsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def item_params
-      params.require(:item).permit(:amount, :name, :restock, :stock_id, :autoRestock, :lastSupplier, :recepLocationId, :recepCompany, :locationId)
+      params.require(:item).permit(:amount, :name, :restock, :stock_id, :autoRestock, :lastSupplier, :recepLocation, :recepCompany, :locationId, :price)
     end
 end

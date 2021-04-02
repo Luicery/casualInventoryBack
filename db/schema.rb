@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_29_134531) do
+ActiveRecord::Schema.define(version: 2021_04_02_133402) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 2021_03_29_134531) do
     t.string "country"
     t.integer "lat"
     t.integer "lng"
+    t.integer "cash"
   end
 
   create_table "items", force: :cascade do |t|
@@ -40,6 +41,7 @@ ActiveRecord::Schema.define(version: 2021_03_29_134531) do
     t.bigint "lastSupplier"
     t.boolean "autoRestock"
     t.integer "price"
+    t.integer "restockAmount"
     t.index ["stock_id"], name: "index_items_on_stock_id"
   end
 
