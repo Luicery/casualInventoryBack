@@ -5530,3 +5530,11 @@ Migrating to AddCashToCompany (20210402133402)
   [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
   [1m[36mCompany Update All (7.0ms)[0m  [1m[33mUPDATE "companies" SET "cash" = COALESCE("cash", 0) + 500 WHERE "companies"."id" = $1[0m  [["id", 7]]
   [1m[36mCompany Update All (1.8ms)[0m  [1m[33mUPDATE "companies" SET "cash" = COALESCE("cash", 0) + 500 WHERE "companies"."id" = $1[0m  [["id", 7]]
+  [1m[36mCompany Load (2.0ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  [1m[36mCompany Load (1.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" ORDER BY "companies"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCompany Load (0.7ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" ORDER BY "companies"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCompany Load (0.7ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" ORDER BY "companies"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" ORDER BY "companies"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCompany Update All (3.0ms)[0m  [1m[33mUPDATE "companies" SET "cash" = COALESCE("cash", 0) + 100 WHERE "companies"."id" = $1[0m  [["id", 7]]
+  [1m[36mCompany Load (2.0ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" ORDER BY "companies"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCompany Update All (1.6ms)[0m  [1m[33mUPDATE "companies" SET "cash" = COALESCE("cash", 0) - 100 WHERE "companies"."id" = $1[0m  [["id", 7]]

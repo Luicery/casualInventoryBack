@@ -55,10 +55,10 @@ class ItemsController < ApplicationController
       updatedItem = location.stock.items.where(name: params[:name]).first
       toUpdatedItem = toLocation.stock.items.where(name: params[:name]).first
       if(toUpdatedItem.exists? && updatedItem.amount > params[:amount])
-        updatedItem.increment!(amount, -params[:amount])
-        toUpdatedItem.increment!(amount, params[:amount])
+        updatedItem.increment!(:amount, -params[:amount])
+        toUpdatedItem.increment!(:amount, params[:amount])
       elsif(updatedItem.amount > params[:amount])
-        updatedItem.increment!(amount, -params[:amount])
+        updatedItem.increment!(:amount, -params[:amount])
         item = Item.create(name: params[:name], amount:[:amount], restock: 0)
         toLocation.stock << item
       end
@@ -69,17 +69,17 @@ class ItemsController < ApplicationController
   def changeItem
     locationItem = current_user.locations.where(address: params[:recepLocationId]).first.stock.items.where(id: params[:id]).first
     if(params[:amount] > 0)
-      locationItem.increment!(amount, params[:amount])
+      locationItem.increment!(:amount, params[:amount])
     else
-      locationItem.update(amount: locationItem.amount-params[:amount])
+      locationItem.increment!(:amount, -params[:amount])
       if(locationItem.amount =< locationItem.restock)
         previousSupplierItem = Location.where(id:locationItem.lastSupplier).first.stock.items.where(name:locationItem.name).first
         if(previousSupplierItem.amount > (locationItem.restockAmount - locationItem.amount))
-          previousSupplierItem.update(amount: previousSupplierItem.amount - (locationItem.restockAmount - locationItem.amount))
+          previousSupplierItem.increment!(:amount, -(locationItem.restockAmount - locationItem.amount))
           locationItem.stock.location.company.increment!(:cash, -previousSupplierItem.price * (locationItem.restockAmount - locationItem.amount))
           locationItem.update(amount: locationItem.restockAmount)
         else
-          locationItem.update(amount: locationItem.amount + previousSupplierItem.amount)
+          locationItem.increment!(:amount, previousSupplierItem.amount)
           locationItem.stock.location.company.increment!(:cash, -previousSupplierItem.price * previousSupplierItem.amount)
           previousSupplierItem.amount = 0
         end
@@ -98,11 +98,11 @@ class ItemsController < ApplicationController
     locationItem = Location.where(address: supplierId).first.stock.items.where(id: itemId).first
     previousSupplierItem = Location.where(id:locationItem.lastSupplier).first.stock.items.where(name:locationItem.name).first
     if(previousSupplierItem.amount > (locationItem.restockAmount - locationItem.amount))
-      previousSupplierItem.update(amount: previousSupplierItem.amount - (locationItem.restockAmount - locationItem.amount))
+      previousSupplierItem.increment!(:amount, -(locationItem.restockAmount - locationItem.amount))
       locationItem.stock.location.company.increment!(:cash, -previousSupplierItem.price * (locationItem.restockAmount - locationItem.amount))
       locationItem.update(amount: locationItem.restockAmount)
     else
-      locationItem.update(amount: locationItem.amount + previousSupplierItem.amount)
+      locationItem.increment!(:amount, previousSupplierItem.amount)
       locationItem.stock.location.company.increment!(:cash, -previousSupplierItem.price * previousSupplierItem.amount)
       previousSupplierItem.amount = 0
     end
