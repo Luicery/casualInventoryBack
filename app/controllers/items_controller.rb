@@ -49,18 +49,18 @@ class ItemsController < ApplicationController
 #Change all of it if I can post in all my data
 # trading supplies done
   def tradeItem
-    toLocation = Company.where(name: params[:recepCompany]).first.locations.where(address: [:recepLocation])
+    toLocation = Company.where(name: params[:recepCompany]).first.locations.where(address: [:recepLocation]).first
     location = current_user.locations.where(id: params[:locationId]).first
     if(location.is_supplier === true)
       updatedItem = location.stock.items.where(name: params[:name]).first
-      toUpdatedItem = toLocation.first.stock.items.where(name: params[:name]).first
-      if(toUpdatedItem.exists? && updatedItem.first.amount > params[:amount])
-        updatedItem.update(amount: updatedItem.first.amount-params[:amount])
-        toUpdatedItem.update(amount: toUpdatedItem.first.amount+params[:amount])
-      elsif(updatedItem.first.amount > params[:amount])
-        updatedItem.update(amount: updatedItem.first.amount-params[:amount])
+      toUpdatedItem = toLocation.stock.items.where(name: params[:name]).first
+      if(toUpdatedItem.exists? && updatedItem.amount > params[:amount])
+        updatedItem.increment!(amount, -params[:amount])
+        toUpdatedItem.increment!(amount, params[:amount])
+      elsif(updatedItem.amount > params[:amount])
+        updatedItem.increment!(amount, -params[:amount])
         item = Item.create(name: params[:name], amount:[:amount], restock: 0)
-        toLocation.first.stock << item
+        toLocation.stock << item
       end
     end
   end
@@ -69,24 +69,45 @@ class ItemsController < ApplicationController
   def changeItem
     locationItem = current_user.locations.where(address: params[:recepLocationId]).first.stock.items.where(id: params[:id]).first
     if(params[:amount] > 0)
-      locationItem.update(amount: locationItem.amount+params[:amount])
+      locationItem.increment!(amount, params[:amount])
     else
       locationItem.update(amount: locationItem.amount-params[:amount])
-      if(locationItem.amount < locationItem.restock)
+      if(locationItem.amount =< locationItem.restock)
         previousSupplierItem = Location.where(id:locationItem.lastSupplier).first.stock.items.where(name:locationItem.name).first
-        if(previousSupplierItem.amount > locationItem.restockAmount - locationItem.amount)
-          previousSupplierItem.amount - (locationItem.restockAmount - locationItem.amount)
-          locationItem.stock.location.company.cash - (previousSupplierItem.price * (locationItem.restockAmount - locationItem.amount))
-          locationItem.amount = locationItem.restockAmount
+        if(previousSupplierItem.amount > (locationItem.restockAmount - locationItem.amount))
+          previousSupplierItem.update(amount: previousSupplierItem.amount - (locationItem.restockAmount - locationItem.amount))
+          locationItem.stock.location.company.increment!(:cash, -previousSupplierItem.price * (locationItem.restockAmount - locationItem.amount))
+          locationItem.update(amount: locationItem.restockAmount)
         else
-          locationItem.amount = locationItem.amount + previousSupplierItem.amount
-          locationItem.stock.location.company.cash - (previousSupplierItem.price * previousSupplierItem.amount)
+          locationItem.update(amount: locationItem.amount + previousSupplierItem.amount)
+          locationItem.stock.location.company.increment!(:cash, -previousSupplierItem.price * previousSupplierItem.amount)
           previousSupplierItem.amount = 0
         end
-        if(previousSupplierItem.amount < previousSupplierItem.restock)
-          changeItem()
+        if(previousSupplierItem.amount =< previousSupplierItem.restock)
+          changeItemSupplier(previousSupplierItem.stock.location.id, previousSupplierItem.id)
         end
       end
+    end
+  end
+
+# If you're thinking why I didn't just make the above method recursive
+# Its because its a precautionary to stop random changes from unauthorised users
+# Also I don't really know how to recursively call with a new current user
+# With a controller method thus the method below
+  def changeItemSupplier(supplierId, itemId)
+    locationItem = Location.where(address: supplierId).first.stock.items.where(id: itemId).first
+    previousSupplierItem = Location.where(id:locationItem.lastSupplier).first.stock.items.where(name:locationItem.name).first
+    if(previousSupplierItem.amount > (locationItem.restockAmount - locationItem.amount))
+      previousSupplierItem.update(amount: previousSupplierItem.amount - (locationItem.restockAmount - locationItem.amount))
+      locationItem.stock.location.company.increment!(:cash, -previousSupplierItem.price * (locationItem.restockAmount - locationItem.amount))
+      locationItem.update(amount: locationItem.restockAmount)
+    else
+      locationItem.update(amount: locationItem.amount + previousSupplierItem.amount)
+      locationItem.stock.location.company.increment!(:cash, -previousSupplierItem.price * previousSupplierItem.amount)
+      previousSupplierItem.amount = 0
+    end
+    if(previousSupplierItem.amount =< previousSupplierItem.restock)
+      changeItemSupplier(previousSupplierItem.stock.location.id, previousSupplierItem.id)
     end
   end
 
