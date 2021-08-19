@@ -1,6 +1,6 @@
 class CompaniesController < ApplicationController
-  before_action :set_company, only: %i[ show edit update destroy ]
-  before_action :authenticate_user, except: [:new, :create, :show, :index]
+  before_action :set_company, only: [ :show, :edit, :update, :destroy ]
+  before_action :authenticate_company, except: [:new, :create, :index, :show]
   # GET /companies or /companies.json
   def index
     @companies = Company.all
@@ -9,12 +9,15 @@ class CompaniesController < ApplicationController
 
   # GET /companyprofile/1 or /companyprofile/1.json
   def show
-    companyData = Company.where(id: params[:id]).first
-    @company = {
-      company: companyData,
-      locations: companyData.locations,
+  end
+
+  def companyProfile
+    # companyData = current_company
+    @company_obj = {
+      company: current_company,
+      companyLocation: current_company.locations
     }
-    render json: @company
+    render json: @company_obj
   end
 
   # GET /companies/new

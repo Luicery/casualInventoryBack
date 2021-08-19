@@ -1,6 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: %i[ show edit update destroy ]
-  before_action :authenticate_user
+  before_action :authenticate_company
   # GET /items or /items.json
   def index
     @items = Item.all
@@ -22,7 +21,7 @@ class ItemsController < ApplicationController
   # POST /items or /items.json
   def create
     @item = Item.create(name:name, price:price, amount:amount)
-    @item.location = Location.where(id:locationId)
+    @item.location = current_company.location.where(id:locationId)
     respond_to do |format|
       if @item.save
         format.html { redirect_to @item, notice: "Item was successfully created." }
@@ -49,8 +48,8 @@ class ItemsController < ApplicationController
 #Change all of it if I can post in all my data
 # trading supplies done
   def tradeItem
-    toLocation = Company.where(name: params[:recepCompany]).first.locations.where(address: [:recepLocation]).first
-    location = current_user.locations.where(id: params[:locationId]).first
+    toLocation = current_company.locations.where(address: [:recepLocation]).first
+    location = current_company.locations.where(id: params[:locationId]).first
     if(location.is_supplier === true)
       updatedItem = location.stock.items.where(name: params[:name]).first
       toUpdatedItem = toLocation.stock.items.where(name: params[:name]).first
@@ -65,14 +64,14 @@ class ItemsController < ApplicationController
     end
   end
 
-  # using and creating items yourself not done
+  # using and creating items yourself NOPE NOT DONE
   def changeItem
-    locationItem = current_user.locations.where(address: params[:recepLocationId]).first.stock.items.where(id: params[:id]).first
+    locationItem = current_company.locations.where(id: params[:locationId]).first.stock.items.where(id: params[:id]).first
     if(params[:amount] > 0)
       locationItem.increment!(:amount, params[:amount])
     else
-      locationItem.increment!(:amount, -params[:amount])
-      if(locationItem.amount =< locationItem.restock)
+      locationItem.increment!(:amount, --params[:amount])
+      if(locationItem.amount <= locationItem.restock)
         previousSupplierItem = Location.where(id:locationItem.lastSupplier).first.stock.items.where(name:locationItem.name).first
         if(previousSupplierItem.amount > (locationItem.restockAmount - locationItem.amount))
           previousSupplierItem.increment!(:amount, -(locationItem.restockAmount - locationItem.amount))
@@ -83,7 +82,7 @@ class ItemsController < ApplicationController
           locationItem.stock.location.company.increment!(:cash, -previousSupplierItem.price * previousSupplierItem.amount)
           previousSupplierItem.amount = 0
         end
-        if(previousSupplierItem.amount =< previousSupplierItem.restock)
+        if(previousSupplierItem.amount <= previousSupplierItem.restock)
           changeItemSupplier(previousSupplierItem.stock.location.id, previousSupplierItem.id)
         end
       end
@@ -106,7 +105,7 @@ class ItemsController < ApplicationController
       locationItem.stock.location.company.increment!(:cash, -previousSupplierItem.price * previousSupplierItem.amount)
       previousSupplierItem.amount = 0
     end
-    if(previousSupplierItem.amount =< previousSupplierItem.restock)
+    if(previousSupplierItem.amount <= previousSupplierItem.restock)
       changeItemSupplier(previousSupplierItem.stock.location.id, previousSupplierItem.id)
     end
   end
@@ -118,9 +117,6 @@ class ItemsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_item
-      @item = Item.find(params[:id])
-    end
 
     # Only allow a list of trusted parameters through.
     def item_params

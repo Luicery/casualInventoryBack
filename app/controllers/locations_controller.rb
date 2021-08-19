@@ -1,6 +1,6 @@
 class LocationsController < ApplicationController
-  before_action :set_location, only: %i[ show edit update destroy ]
-  before_action :authenticate_user, except: [:show]
+  before_action :set_location, only: [ :show, :edit, :update, :destroy ]
+  before_action :authenticate_company
 
   # GET /locations or /locations.json
   def index
@@ -9,7 +9,7 @@ class LocationsController < ApplicationController
 
   # GET /locationprofile/1 or /locationprofile/1.json
   def show
-    locationData = Location.where(id: params[:id]).first
+    locationData = current_company.locations.where(id: params[:id]).first
     @location = {
       parentCompany: locationData.company,
       location: locationData,
@@ -32,7 +32,7 @@ class LocationsController < ApplicationController
     @location = Location.create(location_params)
     stock = Stock.create
     @location.stock = stock
-    @location.company = current_user
+    @location.company = current_company
     respond_to do |format|
       if @location.save
         format.html { redirect_to @location, notice: "Location was successfully created." }
