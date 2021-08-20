@@ -58,7 +58,7 @@ class ItemsController < ApplicationController
         toUpdatedItem.increment!(:amount, params[:amount])
       elsif(updatedItem.amount > params[:amount])
         updatedItem.increment!(:amount, -params[:amount])
-        item = Item.create(name: params[:name], amount:[:amount], restock: 0)
+        item = Item.create(name: params[:name], amount:[:amount], restockPoint: 0)
         toLocation.stock << item
       end
     end
@@ -71,18 +71,18 @@ class ItemsController < ApplicationController
       locationItem.increment!(:amount, params[:amount])
     else
       locationItem.increment!(:amount, --params[:amount])
-      if(locationItem.amount <= locationItem.restock)
+      if(locationItem.amount <= locationItem.restockPoint)
         previousSupplierItem = Location.where(id:locationItem.lastSupplier).first.stock.items.where(name:locationItem.name).first
-        if(previousSupplierItem.amount > (locationItem.restockAmount - locationItem.amount))
-          previousSupplierItem.increment!(:amount, -(locationItem.restockAmount - locationItem.amount))
-          locationItem.stock.location.company.increment!(:cash, -previousSupplierItem.price * (locationItem.restockAmount - locationItem.amount))
-          locationItem.update(amount: locationItem.restockAmount)
+        if(previousSupplierItem.amount > (locationItem.restockTo - locationItem.amount))
+          previousSupplierItem.increment!(:amount, -(locationItem.restockTo - locationItem.amount))
+          locationItem.stock.location.company.increment!(:cash, -previousSupplierItem.price * (locationItem.restockTo - locationItem.amount))
+          locationItem.update(amount: locationItem.restockTo)
         else
           locationItem.increment!(:amount, previousSupplierItem.amount)
           locationItem.stock.location.company.increment!(:cash, -previousSupplierItem.price * previousSupplierItem.amount)
           previousSupplierItem.amount = 0
         end
-        if(previousSupplierItem.amount <= previousSupplierItem.restock)
+        if(previousSupplierItem.amount <= previousSupplierItem.restockPoint)
           changeItemSupplier(previousSupplierItem.stock.location.id, previousSupplierItem.id)
         end
       end
@@ -96,30 +96,28 @@ class ItemsController < ApplicationController
   def changeItemSupplier(supplierId, itemId)
     locationItem = Location.where(address: supplierId).first.stock.items.where(id: itemId).first
     previousSupplierItem = Location.where(id:locationItem.lastSupplier).first.stock.items.where(name:locationItem.name).first
-    if(previousSupplierItem.amount > (locationItem.restockAmount - locationItem.amount))
-      previousSupplierItem.increment!(:amount, -(locationItem.restockAmount - locationItem.amount))
-      locationItem.stock.location.company.increment!(:cash, -previousSupplierItem.price * (locationItem.restockAmount - locationItem.amount))
-      locationItem.update(amount: locationItem.restockAmount)
+    if(previousSupplierItem.amount > (locationItem.restockTo - locationItem.amount))
+      previousSupplierItem.increment!(:amount, -(locationItem.restockTo - locationItem.amount))
+      locationItem.stock.location.company.increment!(:cash, -previousSupplierItem.price * (locationItem.restockTo - locationItem.amount))
+      locationItem.update(amount: locationItem.restockTo)
     else
       locationItem.increment!(:amount, previousSupplierItem.amount)
       locationItem.stock.location.company.increment!(:cash, -previousSupplierItem.price * previousSupplierItem.amount)
       previousSupplierItem.amount = 0
     end
-    if(previousSupplierItem.amount <= previousSupplierItem.restock)
+    if(previousSupplierItem.amount <= previousSupplierItem.restockPoint)
       changeItemSupplier(previousSupplierItem.stock.location.id, previousSupplierItem.id)
     end
   end
 
 # deleting items
   def deleteItem
-    Item.destroy(id:params[:id])
+    current_company.locations.where(id: params[:locationId]).first.stock.items.where(id: params[:id]).first.destroy
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-
     # Only allow a list of trusted parameters through.
     def item_params
-      params.require(:item).permit(:amount, :name, :restock, :stock_id, :autoRestock, :lastSupplier, :recepLocation, :recepCompany, :locationId, :price)
+      params.require(:item).permit(:amount, :name, :restockPoint, :restockTo, :stock_id, :autoRestock, :lastSupplier, :recepLocation, :recepCompany, :locationId, :price)
     end
 end

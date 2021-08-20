@@ -34,14 +34,14 @@ ActiveRecord::Schema.define(version: 2021_04_02_133402) do
   create_table "items", force: :cascade do |t|
     t.integer "amount"
     t.string "name"
-    t.integer "restock"
+    t.integer "restockPoint"
     t.bigint "stock_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "lastSupplier"
     t.boolean "autoRestock"
     t.integer "price"
-    t.integer "restockAmount"
+    t.integer "restockTo"
     t.index ["stock_id"], name: "index_items_on_stock_id"
   end
 

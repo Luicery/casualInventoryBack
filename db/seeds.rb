@@ -17,16 +17,16 @@ stest = Stock.create
 stestsup = Stock.create
 stest2 = Stock.create
 Item.destroy_all
-itest = Item.create(amount:"1000", name:"Iron", restock:"100", lastSupplier:3, autoRestock:false)
-itest1 = Item.create(amount:"10000", name:"Nickel", restock:"1000", lastSupplier:3, autoRestock:false)
-itest2 = Item.create(amount:"2000", name:"Bronze", restock:"200", lastSupplier:3, autoRestock:true)
-itest3 = Item.create(amount:"1500", name:"Gold", restock:"300", lastSupplier:3, autoRestock:false)
-itest4 = Item.create(amount:"2500", name:"Silver", restock:"400", lastSupplier:3, autoRestock:true)
-itest5 = Item.create(amount:"3000", name:"Copper", restock:"500", lastSupplier:3,autoRestock:false)
-itest6 = Item.create(amount:"3500", name:"Tin", restock:"600", lastSupplier:3, autoRestock:true)
-itestno = Item.create(amount:"500", name:"Aluminium", restock:"0", lastSupplier:3, autoRestock:false)
-itest52 = Item.create(amount:"3000", name:"Copper", restock:"500", lastSupplier:3,autoRestock:false)
-itest62 = Item.create(amount:"3500", name:"Tin", restock:"600", lastSupplier:3, autoRestock:true)
+itest = Item.create(amount:"1000", name:"Iron", restockPoint:"100", restockTo:"1000" lastSupplier:3, autoRestock:false)
+itest1 = Item.create(amount:"10000", name:"Nickel", restockPoint:"1000", restockTo:"1200" lastSupplier:3, autoRestock:false)
+itest2 = Item.create(amount:"2000", name:"Bronze", restockPoint:"200", restockTo:"1000" lastSupplier:3, autoRestock:true)
+itest3 = Item.create(amount:"1500", name:"Gold", restockPoint:"300", restockTo:"1000" lastSupplier:3, autoRestock:false)
+itest4 = Item.create(amount:"2500", name:"Silver", restockPoint:"400", restockTo:"1000" lastSupplier:3, autoRestock:true)
+itest5 = Item.create(amount:"3000", name:"Copper", restockPoint:"500", restockTo:"1000" lastSupplier:3,autoRestock:false)
+itest6 = Item.create(amount:"3500", name:"Tin", restockPoint:"600", restockTo:"1000" lastSupplier:3, autoRestock:true)
+itestno = Item.create(amount:"500", name:"Aluminium", restockPoint:"0", restockTo:"1000" lastSupplier:3, autoRestock:false)
+itest52 = Item.create(amount:"3000", name:"Copper", restockPoint:"500", restockTo:"1000" lastSupplier:3,autoRestock:false)
+itest62 = Item.create(amount:"3500", name:"Tin", restockPoint:"600", restockTo:"1000" lastSupplier:3, autoRestock:true)
 
 
 
