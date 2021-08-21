@@ -19,9 +19,10 @@ class ItemsController < ApplicationController
   end
 
   # POST /items or /items.json
+  #Done and Done
   def create
-    @item = Item.create(name:name, price:price, amount:amount)
-    @item.location = current_company.location.where(id:locationId)
+    @item = Item.create(name:params[:name], price:params[:price], amount:params[:amount], autoRestock:params[:autoRestock], restockPoint:params[:restockPoint], restockTo:params[:restockTo])
+    @item.location = current_company.location.where(id:params[:locationId])
     respond_to do |format|
       if @item.save
         format.html { redirect_to @item, notice: "Item was successfully created." }
@@ -48,7 +49,7 @@ class ItemsController < ApplicationController
 #Change all of it if I can post in all my data
 # trading supplies done
   def tradeItem
-    toLocation = current_company.locations.where(address: [:recepLocation]).first
+    toLocation = current_company.locations.where(address: params[:recepLocation]).first
     location = current_company.locations.where(id: params[:locationId]).first
     if(location.is_supplier === true)
       updatedItem = location.stock.items.where(name: params[:name]).first
@@ -58,7 +59,7 @@ class ItemsController < ApplicationController
         toUpdatedItem.increment!(:amount, params[:amount])
       elsif(updatedItem.amount > params[:amount])
         updatedItem.increment!(:amount, -params[:amount])
-        item = Item.create(name: params[:name], amount:[:amount], restockPoint: 0)
+        item = Item.create(name: params[:name], amount:params[:amount], restockPoint: 0)
         toLocation.stock << item
       end
     end
@@ -94,7 +95,7 @@ class ItemsController < ApplicationController
 # Also I don't really know how to recursively call with a new current user
 # With a controller method thus the method below
   def changeItemSupplier(supplierId, itemId)
-    locationItem = Location.where(address: supplierId).first.stock.items.where(id: itemId).first
+    locationItem = current_company.location.where(address: params[:lastSupplier]).first.stock.items.where(id: itemId).first
     previousSupplierItem = Location.where(id:locationItem.lastSupplier).first.stock.items.where(name:locationItem.name).first
     if(previousSupplierItem.amount > (locationItem.restockTo - locationItem.amount))
       previousSupplierItem.increment!(:amount, -(locationItem.restockTo - locationItem.amount))

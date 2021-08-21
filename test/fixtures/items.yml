@@ -1,13 +1,21 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  amount: 1
   name: MyString
-  restock: 1
-  stock: one
+  amount: 1
+  restockPoint: 1
+  belongs_to: 
+  lastSupplier: 
+  autoRestock: false
+  price: 1
+  restockTo: 1
 
 two:
-  amount: 1
   name: MyString
-  restock: 1
-  stock: two
+  amount: 1
+  restockPoint: 1
+  belongs_to: 
+  lastSupplier: 
+  autoRestock: false
+  price: 1
+  restockTo: 1

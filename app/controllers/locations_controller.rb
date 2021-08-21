@@ -30,8 +30,7 @@ class LocationsController < ApplicationController
   # POST /locations or /locations.json
   def create
     @location = Location.create(location_params)
-    stock = Stock.create
-    @location.stock = stock
+    @location.stock = Stock.create
     @location.company = current_company
     respond_to do |format|
       if @location.save
