@@ -4,11 +4,11 @@ class CreateItems < ActiveRecord::Migration[5.2]
       t.string :name
       t.integer :amount
       t.integer :restockPoint
-      t.bigint :lastSupplier
+      t.integer :lastSupplier
       t.boolean :autoRestock
       t.integer :price
       t.integer :restockTo
-      t.belongs_to :stock, foreign_key: true
+      t.belongs_to :location, foreign_key: true
 
       t.timestamps
     end

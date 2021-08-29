@@ -34,33 +34,7 @@ ltest21 = Location.create(address:"61 Jekam Crescent", phone:"52958452123401", m
 ltest22 = Location.create(address:"903 Hakel Road", phone:"12903845124", manager:"Winston Churchill", is_supplier: false)
 ltest23 = Location.create(address:"195 Falep Place", phone:"52958452123401", manager:"Abrahamical Lincolny", is_supplier: true)
 ltest24 = Location.create(address:"186 Stackton Avenue", phone:"12903845124", manager:"EggsBenedict Cucumberpacked", is_supplier: false)
-# Stock testing seeds done theres nothing to do here actually
-Stock.destroy_all
-stest1 = Stock.create
-stest2 = Stock.create
-stest3 = Stock.create
-stest4 = Stock.create
-stest5 = Stock.create
-stest6 = Stock.create
-stest7 = Stock.create
-stest8 = Stock.create
-stest9 = Stock.create
-stest10 = Stock.create
-stest11 = Stock.create
-stest12 = Stock.create
-stest13 = Stock.create
-stest14 = Stock.create
-stest15 = Stock.create
-stest16 = Stock.create
-stest17 = Stock.create
-stest18 = Stock.create
-stest19 = Stock.create
-stest20 = Stock.create
-stest21 = Stock.create
-stest22 = Stock.create
-stest23 = Stock.create
-stest24 = Stock.create
-# Item testing seeds done every location should have 5 items
+# Item testing seeds done every location should have 5 items done with some good ol looping
 Item.destroy_all
 itest1 = Item.create(amount:1573, price:73, name:"oofltqinli", restockPoint:817, restockTo:1419, lastSupplier:0, autoRestock: false)
 itest2 = Item.create(amount:1809, price:74, name:"seoyxnbztc", restockPoint:656, restockTo:1209, lastSupplier:0, autoRestock: true)
@@ -182,7 +156,8 @@ itest117 = Item.create(amount:1122, price:57, name:"ygfevtrqmz", restockPoint:79
 itest118 = Item.create(amount:1934, price:84, name:"snlkspqdft", restockPoint:564, restockTo:1292, lastSupplier:0, autoRestock: true)
 itest119 = Item.create(amount:1688, price:22, name:"grffzrzvzs", restockPoint:817, restockTo:1453, lastSupplier:0, autoRestock: true)
 itest120 = Item.create(amount:1521, price:82, name:"iefhmpzwqo", restockPoint:430, restockTo:1457, lastSupplier:0, autoRestock: true)
-  
+
+#Whatever this is called its done
 ctest1.locations << ltest1 << ltest2 << ltest3
 ctest2.locations << ltest4 << ltest5 << ltest6
 ctest3.locations << ltest7 << ltest8 << ltest9
@@ -192,52 +167,27 @@ ctest6.locations << ltest16 << ltest17 << ltest18
 ctest7.locations << ltest19 << ltest20 << ltest21
 ctest8.locations << ltest22 << ltest23 << ltest24
 
-ltest1.stock = stest1
-ltest2.stock = stest2
-ltest3.stock = stest3
-ltest4.stock = stest4
-ltest5.stock = stest5
-ltest6.stock = stest6
-ltest7.stock = stest7
-ltest8.stock = stest8
-ltest9.stock = stest9
-ltest10.stock = stest10
-ltest11.stock = stest11
-ltest12.stock = stest12
-ltest13.stock = stest13
-ltest14.stock = stest14
-ltest15.stock = stest15
-ltest16.stock = stest16
-ltest17.stock = stest17
-ltest18.stock = stest18
-ltest19.stock = stest19
-ltest20.stock = stest20
-ltest21.stock = stest21
-ltest22.stock = stest22
-ltest23.stock = stest23
-ltest24.stock = stest24
-
-stest1.items << itest1 << itest2 << itest3 << itest4 << itest5
-stest2.items << itest6 << itest7 << itest8 << itest9 << itest10
-stest3.items << itest11 << itest12 << itest13 << itest14 << itest15
-stest4.items << itest16 << itest17 << itest18 << itest19 << itest20
-stest5.items << itest21 << itest22 << itest23 << itest24 << itest25
-stest6.items << itest26 << itest27 << itest28 << itest29 << itest30
-stest7.items << itest31 << itest32 << itest33 << itest34 << itest35
-stest8.items << itest36 << itest37 << itest38 << itest39 << itest40
-stest9.items << itest41 << itest42 << itest43 << itest44 << itest45
-stest10.items << itest46 << itest47 << itest48 << itest49 << itest50
-stest11.items << itest51 << itest52 << itest53 << itest54 << itest55
-stest12.items << itest56 << itest57 << itest58 << itest59 << itest60
-stest13.items << itest61 << itest62 << itest63 << itest64 << itest65
-stest14.items << itest66 << itest67 << itest68 << itest69 << itest70
-stest15.items << itest71 << itest72 << itest73 << itest74 << itest75
-stest16.items << itest76 << itest77 << itest78 << itest79 << itest80
-stest17.items << itest81 << itest82 << itest83 << itest84 << itest85
-stest18.items << itest86 << itest87 << itest88 << itest89 << itest90
-stest19.items << itest91 << itest92 << itest93 << itest94 << itest95
-stest20.items << itest96 << itest97 << itest98 << itest99 << itest100
-stest21.items << itest101 << itest102 << itest103 << itest104 << itest105
-stest22.items << itest106 << itest107 << itest108 << itest109 << itest110
-stest23.items << itest111 << itest112 << itest113 << itest114 << itest115
-stest24.items << itest116 << itest117 << itest118 << itest119 << itest120
+ltest1.items << itest1 << itest2 << itest3 << itest4 << itest5
+ltest2.items << itest6 << itest7 << itest8 << itest9 << itest10
+ltest3.items << itest11 << itest12 << itest13 << itest14 << itest15
+ltest4.items << itest16 << itest17 << itest18 << itest19 << itest20
+ltest5.items << itest21 << itest22 << itest23 << itest24 << itest25
+ltest6.items << itest26 << itest27 << itest28 << itest29 << itest30
+ltest7.items << itest31 << itest32 << itest33 << itest34 << itest35
+ltest8.items << itest36 << itest37 << itest38 << itest39 << itest40
+ltest9.items << itest41 << itest42 << itest43 << itest44 << itest45
+ltest10.items << itest46 << itest47 << itest48 << itest49 << itest50
+ltest11.items << itest51 << itest52 << itest53 << itest54 << itest55
+ltest12.items << itest56 << itest57 << itest58 << itest59 << itest60
+ltest13.items << itest61 << itest62 << itest63 << itest64 << itest65
+ltest14.items << itest66 << itest67 << itest68 << itest69 << itest70
+ltest15.items << itest71 << itest72 << itest73 << itest74 << itest75
+ltest16.items << itest76 << itest77 << itest78 << itest79 << itest80
+ltest17.items << itest81 << itest82 << itest83 << itest84 << itest85
+ltest18.items << itest86 << itest87 << itest88 << itest89 << itest90
+ltest19.items << itest91 << itest92 << itest93 << itest94 << itest95
+ltest20.items << itest96 << itest97 << itest98 << itest99 << itest100
+ltest21.items << itest101 << itest102 << itest103 << itest104 << itest105
+ltest22.items << itest106 << itest107 << itest108 << itest109 << itest110
+ltest23.items << itest111 << itest112 << itest113 << itest114 << itest115
+ltest24.items << itest116 << itest117 << itest118 << itest119 << itest120

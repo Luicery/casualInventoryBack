@@ -4,18 +4,18 @@ one:
   name: MyString
   amount: 1
   restockPoint: 1
-  belongs_to: 
-  lastSupplier: 
+  lastSupplier: 1
   autoRestock: false
   price: 1
   restockTo: 1
+  location: one
 
 two:
   name: MyString
   amount: 1
   restockPoint: 1
-  belongs_to: 
-  lastSupplier: 
+  lastSupplier: 1
   autoRestock: false
   price: 1
   restockTo: 1
+  location: two

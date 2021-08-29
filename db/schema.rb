@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_21_041211) do
+ActiveRecord::Schema.define(version: 2021_08_29_034606) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,14 +35,14 @@ ActiveRecord::Schema.define(version: 2021_08_21_041211) do
     t.string "name"
     t.integer "amount"
     t.integer "restockPoint"
-    t.bigint "lastSupplier"
+    t.integer "lastSupplier"
     t.boolean "autoRestock"
     t.integer "price"
     t.integer "restockTo"
-    t.bigint "stock_id"
+    t.bigint "location_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["stock_id"], name: "index_items_on_stock_id"
+    t.index ["location_id"], name: "index_items_on_location_id"
   end
 
   create_table "locations", force: :cascade do |t|
@@ -61,14 +61,6 @@ ActiveRecord::Schema.define(version: 2021_08_21_041211) do
     t.index ["company_id"], name: "index_locations_on_company_id"
   end
 
-  create_table "stocks", force: :cascade do |t|
-    t.bigint "location_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["location_id"], name: "index_stocks_on_location_id"
-  end
-
-  add_foreign_key "items", "stocks"
+  add_foreign_key "items", "locations"
   add_foreign_key "locations", "companies"
-  add_foreign_key "stocks", "locations"
 end

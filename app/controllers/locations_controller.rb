@@ -13,7 +13,7 @@ class LocationsController < ApplicationController
     @location = {
       parentCompany: locationData.company,
       location: locationData,
-      stock: locationData.stock.items,
+      stock: locationData.items,
     }
     render json: @location
   end
@@ -30,7 +30,6 @@ class LocationsController < ApplicationController
   # POST /locations or /locations.json
   def create
     @location = Location.create(location_params)
-    @location.stock = Stock.create
     @location.company = current_company
     respond_to do |format|
       if @location.save

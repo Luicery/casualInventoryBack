@@ -1,4 +1,4 @@
 class Location < ApplicationRecord
   belongs_to :company
-  has_one :stock, dependent: :destroy
+  has_many :items, dependent: :destroy
 end
