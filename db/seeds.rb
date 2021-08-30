@@ -1,40 +1,40 @@
-# Company testing seeds 8 is enough I think My little ecosystem
+# company testing seeds 8 is enough i think my little ecosystem
 Company.destroy_all
-ctest1 = Company.create(email:"test@test.com", password:"test", address:"84 Blanket Place", name:"origin", phone:"+645833269305")
-ctest2 = Company.create(email:"test2@test.com", password:"test", address:"21 Jump Street", name:"betacomp", phone:"+618408504031")
-ctest3 = Company.create(email:"test3@test.com", password:"test", address:"61 Place Place", name:"th3stooges", phone:"+615555555555")
-ctest4 = Company.create(email:"test4@test.com", password:"test", address:"4 Balon Street", name:"warehousing of warehouses", phone:"+619474920406")
-ctest5 = Company.create(email:"test5@test.com", password:"test", address:"161 Treehouse Bay", name:"maker of things that make things", phone:"+618574930685")
-ctest6 = Company.create(email:"test6@test.com", password:"test", address:"457 Apartment Road", name:"just a little company", phone:"+611234567890")
-ctest7 = Company.create(email:"capstest7@test.com", password:"Test", address:"94 Bigger Place", name:"just a bigger company", phone:"+610987654321")
-ctest8 = Company.create(email:"test8@test.com", password:"test", address:"51 Lasting Avenue", name:"the last company", phone:"+610987664752")
-# Location testing seeds 3 for each should be enough
+ctest1 = Company.create(email:"test@test.com", password:"test", address:"84 blanket place", name:"origin", phone:"+645833269305")
+ctest2 = Company.create(email:"test2@test.com", password:"test", address:"21 jump street", name:"betacomp", phone:"+618408504031")
+ctest3 = Company.create(email:"test3@test.com", password:"test", address:"61 place place", name:"th3stooges", phone:"+615555555555")
+ctest4 = Company.create(email:"test4@test.com", password:"test", address:"4 balon street", name:"warehousing of warehouses", phone:"+619474920406")
+ctest5 = Company.create(email:"test5@test.com", password:"test", address:"161 treehouse bay", name:"maker of things that make things", phone:"+618574930685")
+ctest6 = Company.create(email:"test6@test.com", password:"test", address:"457 apartment road", name:"just a little company", phone:"+611234567890")
+ctest7 = Company.create(email:"capstest7@test.com", password:"test", address:"94 bigger place", name:"just a bigger company", phone:"+610987654321")
+ctest8 = Company.create(email:"test8@test.com", password:"test", address:"51 lasting avenue", name:"the last company", phone:"+610987664752")
+# location testing seeds 3 for each should be enough
 Location.destroy_all
-ltest1 = Location.create(address:"864 Patterson Fork Road", phone:"52958452123401", manager:"Johnathon", is_supplier: true)
-ltest2 = Location.create(address:"59 Maccarthy Street", phone:"52958452123401", manager:"Arthur Livingston", is_supplier: false)
-ltest3 = Location.create(address:"18 Philips Avenue", phone:"12903845124", manager:"Kelam", is_supplier: false)
-ltest4 = Location.create(address:"152 Chapel Road", phone:"52958452123401", manager:"Ape Man", is_supplier: true)
-ltest5 = Location.create(address:"62 Screwdon Crescent", phone:"52958452123401", manager:"Monkey Dude", is_supplier: false)
-ltest6 = Location.create(address:"89 Curtain Street", phone:"12903845124", manager:"Toilet Brush", is_supplier: true)
-ltest7 = Location.create(address:"195 Paltes Road", phone:"52958452123401", manager:"Actual Poop", is_supplier: false)
-ltest8 = Location.create(address:"59 Boxton Road", phone:"12903845124", manager:"Controller Controller", is_supplier: false)
-ltest9 = Location.create(address:"95 Townhouse Place", phone:"52958452123401", manager:"Ghost Man", is_supplier: false)
-ltest10 = Location.create(address:"293/18 Wilkers Road", phone:"12903845124", manager:"Ghostman Wife", is_supplier: false)
-ltest11 = Location.create(address:"193 Jonae Street", phone:"52958452123401", manager:"Ghostman Kid", is_supplier: true)
-ltest12 = Location.create(address:"924 Big Place Place", phone:"12903845124", manager:"Timmy", is_supplier: false)
-ltest13 = Location.create(address:"2 Tile Road", phone:"52958452123401", manager:"Buckarooni", is_supplier: true)
-ltest14 = Location.create(address:"91 Framin Place", phone:"52958452123401", manager:"Aralekmffsjsef", is_supplier: false)
-ltest15 = Location.create(address:"59 Doyle Avenue", phone:"12903845124", manager:"Unpronounable", is_supplier: false)
-ltest16 = Location.create(address:"153 Macca Road", phone:"52958452123401", manager:"Guy Weird", is_supplier: true)
-ltest17 = Location.create(address:"163 Arthan Place", phone:"52958452123401", manager:"S0m3th1ng Wr0ng", is_supplier: true)
-ltest18 = Location.create(address:"296 Ajen Road", phone:"12903845124", manager:"Firstname LastName", is_supplier: true)
-ltest19 = Location.create(address:"93 Yale Avenue", phone:"52958452123401", manager:"Surname Firstname", is_supplier: false)
-ltest20 = Location.create(address:"31 Alep Place", phone:"12903845124", manager:"Alexander (the great) Manager", is_supplier: true)
-ltest21 = Location.create(address:"61 Jekam Crescent", phone:"52958452123401", manager:"Ivan (the terrible and me) Manager", is_supplier: false)
-ltest22 = Location.create(address:"903 Hakel Road", phone:"12903845124", manager:"Winston Churchill", is_supplier: false)
-ltest23 = Location.create(address:"195 Falep Place", phone:"52958452123401", manager:"Abrahamical Lincolny", is_supplier: true)
-ltest24 = Location.create(address:"186 Stackton Avenue", phone:"12903845124", manager:"EggsBenedict Cucumberpacked", is_supplier: false)
-# Item testing seeds done every location should have 5 items done with some good ol looping
+ltest1 = Location.create(address:"864 patterson fork road", phone:"52958452123401", manager:"johnathon", is_supplier: true)
+ltest2 = Location.create(address:"59 maccarthy street", phone:"52958452123401", manager:"arthur livingston", is_supplier: false)
+ltest3 = Location.create(address:"18 philips avenue", phone:"12903845124", manager:"kelam", is_supplier: false)
+ltest4 = Location.create(address:"152 chapel road", phone:"52958452123401", manager:"ape man", is_supplier: true)
+ltest5 = Location.create(address:"62 screwdon crescent", phone:"52958452123401", manager:"monkey dude", is_supplier: false)
+ltest6 = Location.create(address:"89 curtain street", phone:"12903845124", manager:"toilet brush", is_supplier: true)
+ltest7 = Location.create(address:"195 paltes road", phone:"52958452123401", manager:"actual poop", is_supplier: false)
+ltest8 = Location.create(address:"59 boxton road", phone:"12903845124", manager:"controller controller", is_supplier: false)
+ltest9 = Location.create(address:"95 townhouse place", phone:"52958452123401", manager:"ghost man", is_supplier: false)
+ltest10 = Location.create(address:"293/18 wilkers road", phone:"12903845124", manager:"ghostman wife", is_supplier: false)
+ltest11 = Location.create(address:"193 jonae street", phone:"52958452123401", manager:"ghostman kid", is_supplier: true)
+ltest12 = Location.create(address:"924 big place place", phone:"12903845124", manager:"timmy", is_supplier: false)
+ltest13 = Location.create(address:"2 tile road", phone:"52958452123401", manager:"buckarooni", is_supplier: true)
+ltest14 = Location.create(address:"91 framin place", phone:"52958452123401", manager:"aralekmffsjsef", is_supplier: false)
+ltest15 = Location.create(address:"59 doyle avenue", phone:"12903845124", manager:"unpronounable", is_supplier: false)
+ltest16 = Location.create(address:"153 macca road", phone:"52958452123401", manager:"guy weird", is_supplier: true)
+ltest17 = Location.create(address:"163 arthan place", phone:"52958452123401", manager:"s0m3th1ng wr0ng", is_supplier: true)
+ltest18 = Location.create(address:"296 ajen road", phone:"12903845124", manager:"firstname lastname", is_supplier: true)
+ltest19 = Location.create(address:"93 yale avenue", phone:"52958452123401", manager:"surname firstname", is_supplier: false)
+ltest20 = Location.create(address:"31 alep place", phone:"12903845124", manager:"alexander (the great) manager", is_supplier: true)
+ltest21 = Location.create(address:"61 jekam crescent", phone:"52958452123401", manager:"ivan (the terrible and me) manager", is_supplier: false)
+ltest22 = Location.create(address:"903 hakel road", phone:"12903845124", manager:"winston churchill", is_supplier: false)
+ltest23 = Location.create(address:"195 falep place", phone:"52958452123401", manager:"abrahamical lincolny", is_supplier: true)
+ltest24 = Location.create(address:"186 stackton avenue", phone:"12903845124", manager:"eggsbenedict cucumberpacked", is_supplier: false)
+# item testing seeds done every location should have 5 items done with some good ol looping
 Item.destroy_all
 itest1 = Item.create(amount:1573, price:73, name:"oofltqinli", restockPoint:817, restockTo:1419, lastSupplier:0, autoRestock: false)
 itest2 = Item.create(amount:1809, price:74, name:"seoyxnbztc", restockPoint:656, restockTo:1209, lastSupplier:0, autoRestock: true)
@@ -157,7 +157,7 @@ itest118 = Item.create(amount:1934, price:84, name:"snlkspqdft", restockPoint:56
 itest119 = Item.create(amount:1688, price:22, name:"grffzrzvzs", restockPoint:817, restockTo:1453, lastSupplier:0, autoRestock: true)
 itest120 = Item.create(amount:1521, price:82, name:"iefhmpzwqo", restockPoint:430, restockTo:1457, lastSupplier:0, autoRestock: true)
 
-#Whatever this is called its done
+#whatever this is called its done
 ctest1.locations << ltest1 << ltest2 << ltest3
 ctest2.locations << ltest4 << ltest5 << ltest6
 ctest3.locations << ltest7 << ltest8 << ltest9

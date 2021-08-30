@@ -13,7 +13,7 @@ class LocationsController < ApplicationController
     @location = {
       parentCompany: locationData.company,
       location: locationData,
-      stock: locationData.items,
+      stock: locationData.items.sort_by {|h| h[:name]},
     }
     render json: @location
   end

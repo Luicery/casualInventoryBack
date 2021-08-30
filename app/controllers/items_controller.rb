@@ -49,25 +49,25 @@ class ItemsController < ApplicationController
     end
   end
 #Change all of it if I can post in all my data
-# trading supplies done
+# trading supplies to other locations COMPLETELY DONE
   def tradeItem
-    toLocation = current_company.locations.where(address: params[:recepLocation]).first
+    toLocation = Company.where(name: params[:recepCompany]).first.locations.where(address: params[:recepLocation]).first
     location = current_company.locations.where(id: params[:locationId]).first
     if(location.is_supplier === true)
       updatedItem = location.items.where(name: params[:name]).first
       toUpdatedItem = toLocation.items.where(name: params[:name]).first
-      if(toUpdatedItem.exists? && updatedItem.amount > params[:amount])
-        updatedItem.increment!(:amount, -params[:amount])
-        toUpdatedItem.increment!(:amount, params[:amount])
-      elsif(updatedItem.amount > params[:amount])
-        updatedItem.increment!(:amount, -params[:amount])
-        item = Item.create(name: params[:name], amount:params[:amount], restockPoint: 0)
-        toLocation << item
+      if(toUpdatedItem.present? && updatedItem.amount > params[:amount].to_i)
+        updatedItem.increment!(:amount, -params[:amount].to_i)
+        toUpdatedItem.increment!(:amount, params[:amount].to_i)
+      elsif(updatedItem.amount > params[:amount].to_i)
+        updatedItem.increment!(:amount, -params[:amount].to_i)
+        item = Item.create(name: params[:name], amount:params[:amount].to_i, price: updatedItem.price, autoRestock: false, lastSupplier:location.id)
+        toLocation.items << item
       end
     end
   end
 
-  # using and creating items yourself NOPE NOT DONE
+  # using and creating items yourself only works on self
   def changeItem
     locationItem = current_company.locations.where(id: params[:locationId]).first.items.where(id: params[:id]).first
     if(params[:amount] > 0)
