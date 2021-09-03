@@ -31,6 +31,9 @@ class LocationsController < ApplicationController
   def create
     @location = Location.create(location_params)
     @location.company = current_company
+    # Also throwing a weird error like the DELETE but this has to be
+    # kept or else the entire thing wont work after cors change ???????
+    # DELETE still works though???????????????????????????????????
     respond_to do |format|
       if @location.save
         format.html { redirect_to @location, notice: "Location was successfully created." }
@@ -58,10 +61,11 @@ class LocationsController < ApplicationController
   # DELETE /locations/1 or /locations/1.json
   def destroy
     @location.destroy
-    respond_to do |format|
-      format.html { redirect_to locations_url, notice: "Location was successfully destroyed." }
-      format.json { head :no_content }
-    end
+    # Below is sending weird error on the front end where it tries to access the thing just destroyed
+    # respond_to do |format|
+    #   format.html { redirect_to locations_url, notice: "Location was successfully destroyed." }
+    #   format.json { head :no_content }
+    # end
   end
 
   private
@@ -72,6 +76,6 @@ class LocationsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def location_params
-      params.require(:location).permit(:address, :phone, :manager, :company_id, :is_suppler)
+      params.require(:location).permit(:address, :phone, :manager, :company_id, :is_supplier)
     end
 end
