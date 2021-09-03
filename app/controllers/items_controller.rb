@@ -49,8 +49,8 @@ class ItemsController < ApplicationController
     end
   end
 #Change all of it if I can post in all my data
-# trading supplies to other locations COMPLETELY DONE
-  def tradeItem
+# Giving supplies to other locations COMPLETELY DONE
+  def giveItem
     toLocation = Company.where(name: params[:recepCompany]).first.locations.where(address: params[:recepLocation]).first
     location = current_company.locations.where(id: params[:locationId]).first
     if(location.is_supplier === true)
@@ -64,30 +64,31 @@ class ItemsController < ApplicationController
         item = Item.create(name: params[:name], amount:params[:amount].to_i, price: updatedItem.price, autoRestock: false, lastSupplier:location.id)
         toLocation.items << item
       end
+      if(updatedItem.amount <= updatedItem.restockPoint)
+        changeItemSupplier(updatedItem.id)
+      end
     end
   end
 
-  # using and creating items yourself only works on self
+  # using and creating items yourself Now works on others too I am pretty sure less i missed something
   def changeItem
     locationItem = current_company.locations.where(id: params[:locationId]).first.items.where(id: params[:id]).first
-    if(params[:amount] > 0)
-      locationItem.increment!(:amount, params[:amount])
-    else
-      locationItem.increment!(:amount, --params[:amount])
-      if(locationItem.amount <= locationItem.restockPoint)
-        previousSupplierItem = Location.where(id:locationItem.lastSupplier).first.items.where(name:locationItem.name).first
-        if(previousSupplierItem.amount > (locationItem.restockTo - locationItem.amount))
-          previousSupplierItem.increment!(:amount, -(locationItem.restockTo - locationItem.amount))
-          locationItem.location.company.increment!(:cash, -previousSupplierItem.price * (locationItem.restockTo - locationItem.amount))
-          locationItem.update(amount: locationItem.restockTo)
-        else
-          locationItem.increment!(:amount, previousSupplierItem.amount)
-          locationItem.location.company.increment!(:cash, -previousSupplierItem.price * previousSupplierItem.amount)
-          previousSupplierItem.amount = 0
-        end
-        if(previousSupplierItem.amount <= previousSupplierItem.restockPoint)
-          changeItemSupplier(previousSupplierItem.location.id, previousSupplierItem.id)
-        end
+    locationItem.increment!(:amount, params[:amount].to_i)
+    if(locationItem.amount <= locationItem.restockPoint && locationItem.lastSupplier != locationItem.location.id)
+      previousSupplierItem = Location.where(id:locationItem.lastSupplier).first.items.where(name:locationItem.name).first
+      if(previousSupplierItem.amount > (locationItem.restockTo - locationItem.amount))
+        previousSupplierItem.increment!(:amount, -(locationItem.restockTo - locationItem.amount))
+        # PRETEND CASH ISN"T A THING YET
+        # locationItem.location.company.increment!(:cash, -previousSupplierItem.price * (locationItem.restockTo - locationItem.amount))
+        locationItem.update(amount: locationItem.restockTo)
+      else
+        locationItem.increment!(:amount, previousSupplierItem.amount)
+        # PRETEND CASH ISN"T A THING YET
+        # locationItem.location.company.increment!(:cash, -previousSupplierItem.price * previousSupplierItem.amount)
+        previousSupplierItem.amount = 0
+      end
+      if(previousSupplierItem.amount <= previousSupplierItem.restockPoint)
+        changeItemSupplier(previousSupplierItem.id)
       end
     end
   end
@@ -96,20 +97,24 @@ class ItemsController < ApplicationController
 # Its because its a precautionary to stop random changes from unauthorised users
 # Also I don't really know how to recursively call with a new current user
 # With a controller method thus the method below
-  def changeItemSupplier(supplierId, itemId)
-    locationItem = current_company.location.where(address: params[:lastSupplier]).first.items.where(id: itemId).first
+  def changeItemSupplier(itemId)
+    locationItem = Item.where(id: itemId)
     previousSupplierItem = Location.where(id:locationItem.lastSupplier).first.items.where(name:locationItem.name).first
-    if(previousSupplierItem.amount > (locationItem.restockTo - locationItem.amount))
-      previousSupplierItem.increment!(:amount, -(locationItem.restockTo - locationItem.amount))
-      locationItem.location.company.increment!(:cash, -previousSupplierItem.price * (locationItem.restockTo - locationItem.amount))
-      locationItem.update(amount: locationItem.restockTo)
-    else
-      locationItem.increment!(:amount, previousSupplierItem.amount)
-      locationItem.location.company.increment!(:cash, -previousSupplierItem.price * previousSupplierItem.amount)
-      previousSupplierItem.amount = 0
-    end
-    if(previousSupplierItem.amount <= previousSupplierItem.restockPoint)
-      changeItemSupplier(previousSupplierItem.location.id, previousSupplierItem.id)
+    if(locationItem != previousSupplierItem)
+      if(previousSupplierItem.amount > (locationItem.restockTo - locationItem.amount))
+        previousSupplierItem.increment!(:amount, -(locationItem.restockTo - locationItem.amount))
+        # PRETEND CASH ISN"T A THING YET
+        # locationItem.location.company.increment!(:cash, -previousSupplierItem.price * (locationItem.restockTo - locationItem.amount))
+        locationItem.update(amount: locationItem.restockTo)
+      else
+        locationItem.increment!(:amount, previousSupplierItem.amount)
+        # PRETEND CASH ISN"T A THING YET
+        # locationItem.location.company.increment!(:cash, -previousSupplierItem.price * previousSupplierItem.amount)
+        previousSupplierItem.amount = 0
+      end
+      if(previousSupplierItem.amount <= previousSupplierItem.restockPoint)
+        changeItemSupplier(previousSupplierItem.id)
+      end
     end
   end
 

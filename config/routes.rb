@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :items
   get "/locationprofile/:id" => "locations#show"
   post "/signup" => "companies#create"
-  post "/tradeItem" => "items#tradeItem"
+  post "/giveItem" => "items#giveItem"
   post "/changeItem" => "items#changeItem"
   post "/deleteItem" => "items#deleteItem"
   get "/companyProfile" => "companies#companyProfile"
